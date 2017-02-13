@@ -1,0 +1,26 @@
+{
+  "name": "nasa-pam",
+  "description": "app",
+  "main": "index.html",
+  "authors": [
+    "tc.member"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "datatables.net": "^2.1.1",
+    "dropkick": "^2.1.9",
+    "datepicker": "fengyuanchen/datepicker#^0.4.0"
+  },
+  "resolutions": {
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <title>NASA PAM</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="bower_components/dropkick/build/css/dropkick.css" />
+  <link rel="stylesheet" href="bower_components/datepicker/dist/datepicker.min.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/sprite.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="has-header">
+  <header class="main-head">
+    <div class="viewport">
+      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+      <h1 class="main-title">Partnership Agreement Maker</h1>
+      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+        <img class="thumb" src="i/user.png" alt="" />
+        </span>
+        <a class="caret icon-caret"></a>
+      </div>
+    </div>
+  </header>
+  <!-- /.main-head -->
+  <nav class="main-nav">
+    <div class="viewport">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="routing-packages.html">Routing Packages</a></li>
+        <li><a href="routing-templates.html">Routing Templates</a></li>
+        <li><a href="my-reviews.html">My Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.main-nav -->
+  <main data-role="main" class="main">
+    <div class="bar-page-title">
+      <div class="viewport fx">
+        <h2 class="page-title has-icon"><i class="icon-list"></i>Routing Packages</h2>
+        <div class="rt">
+          <a href="create-new-routing-package.html" class="btn md">Create New Routing Package</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.bar-page-title -->
+    <div class="viewport">
+      <nav class="bar-tabnav">
+        <ul>
+          <li><a href="routing-packages.html">Draft (<span id="draft-count">00</span>)</a></li>
+          <li><a href="routing-packages-in-routing.html">In Routing (<span id="inrouting-count">00</span>)</a></li>
+          <li><a href="routing-packages-complete.html" class="on">Completed (<span id="completed-count">00</span>)</a></li>
+        </ul>
+
+        <div class="rt">
+          <a class="btn-filter">Filter <i class="icon-caret"></i></a>
+        </div>
+      </nav>
+      <!-- /.bar-tabnav -->
+      <form class="filter-panel">
+        <div class="filter-container">
+          <fieldset>
+            <select class="stylize row1" id="routing-group">
+              <option selected class="hidden-option">Routing Group</option>
+              <option value="group1">Group 1</option>
+              <option value="group2">Group 2</option>
+              <option value="group3">Group 3</option>
+            </select>
+            <div class="input-group row2">
+              <label for="titleFilter">Title</label>
+              <input type="text" id="titleFilter">
+            </div>
+            <div class="input-group row3">
+              <label for="routingFilter">Routing #</label>
+              <input type="text" id="routingFilter">
+            </div>
+            <div class="input-group row4">
+              <label for="pamFilter">PAM #</label>
+              <input type="text" id="pamFilter">
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="input-group row1 clearfix">
+              <input type="text" placeholder="Search" id="search">
+              <select class="stylize partner-name" id="partner-name">
+                <option selected class="hidden-option">Partner Name</option>
+                <option value="lorem">Partner Name</option>
+                <option value="ipsum">Agreement No.</option>
+              </select>
+            </div>
+            <div class="input-group row2 two-inputs clearfix">
+              <label for="createdFrom">Created Between</label>
+              <div class="dp-wrap"><i class="icon-datepicker"></i>
+                <input type="text" placeholder="00/00/0000" class="datepicker" id="createdFrom">
+              </div>
+              <span>To</span>
+              <div class="dp-wrap"><i class="icon-datepicker"></i>
+                <input type="text" placeholder="00/00/0000" class="datepicker" id="createdTill">
+              </div>
+            </div>
+            <div class="input-group row3 two-inputs clearfix">
+              <label for="routedFrom">Routed Between</label>
+              <div class="dp-wrap"><i class="icon-datepicker"></i>
+                <input type="text" placeholder="00/00/0000" class="datepicker" id="routedFrom">
+              </div>
+              <span>To</span>
+              <div class="dp-wrap"><i class="icon-datepicker"></i>
+                <input type="text" placeholder="00/00/0000" class="datepicker" id="routedTill">
+              </div>
+            </div>
+            <div class="input-group row4 two-inputs clearfix">
+              <label for="completedFrom">Completed Between</label>
+              <div class="dp-wrap"><i class="icon-datepicker"></i>
+                <input type="text" placeholder="00/00/0000" class="datepicker" id="completedFrom">
+              </div>
+              <span>To</span>
+              <div class="dp-wrap"><i class="icon-datepicker"></i>
+                <input type="text" placeholder="00/00/0000" class="datepicker" id="completedTill">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="input-group row1">
+              <label class="chk chk-lg only-administered">
+                <input type="checkbox" checked="checked" class="chkctrl" />
+                <i class="icon"></i>
+                <span>Show Only Packages Adminstered by me</span>
+              </label>
+            </div>
+            <div class="input-group row2">
+              <label for="createdByFilter">Created By</label>
+              <input type="text" id="createdByFilter">
+            </div>
+            <div class="input-group row3">
+              <label for="reviewedByFilter">Reviewed By</label>
+              <input type="text" id="reviewedByFilter">
+            </div>
+            <div class="input-group row4 radio-group">
+              <label class="clearfix">Completion Status</label>
+              <label class="chk chk-lg">
+                <input type="checkbox" checked="checked" class="chkctrl" />
+                <i class="icon"></i>
+                <span>Drafted</span>
+              </label>
+              <label class="chk chk-lg">
+                <input type="checkbox" checked="checked" class="chkctrl" />
+                <i class="icon"></i>
+                <span>In routing</span>
+              </label>
+              <label class="chk chk-lg">
+                <input type="checkbox" class="chkctrl" />
+                <i class="icon"></i>
+                <span>Completed</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="actions">
+          <a class="btn btn-secondary" onclick="filterReset()">Reset</a>
+          <a class="btn" onclick="filterTable()">Filter</a>
+        </div>
+      </form>
+      <!-- /.filter-panel -->
+
+      <div class="table-container jq-datatable has-spacing">
+        <table data-datatable="db-routing-packages-completed.json" data-enabled-search="" data-linked-id="draft-count" id="routing-pkg" class="datatable">
+          <thead>
+            <tr>
+              <th><span class="sortable">Routing Package Name<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Group<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Administered by<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Completed On<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Current Reviewers<i class="icon-caret-dark"></i></span></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- /.table-container -->
+
+    </div>
+    <!-- /.viewport -->
+  </main>
+
+  <!-- @TODO:  modal -->
+  <!-- @TODO:  modal-end -->
+  <!-- JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>
+  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="bower_components/datepicker/dist/datepicker.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

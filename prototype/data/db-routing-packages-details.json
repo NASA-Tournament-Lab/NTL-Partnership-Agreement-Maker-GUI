@@ -1,0 +1,175 @@
+{
+  "loremPkgName":[{
+      "routingN": "00000",
+      "pamN": "00000",
+      "group": "Lorem group name",
+      "administrator":"username",
+      "status":"In Routing",
+      "routingStartedOn":"00/00/0000 00:00 PM<br/>in routing since 0D 12H 34M",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget."
+    }],
+  "reviewers": [
+    {
+      "reviewerName": "Mary Meador",
+      "concorrenceApproved":"Approved<br/><span class='t'>00/00/0000  00:00 AM</span>",
+      "concorrence":"On Hold",
+      "isRemoveHold":true,
+      "emailStatus":"<span>Last sent on</span><br/>00/00/0000  00:00 AM",
+      "emailStatusClass":"sent",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "comments2Reviewer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      "hasReviewerComments":true,
+      "reviewerComments": "<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. <span>01/01/2017 00:00</span></div><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. <span>01/01/2017 00:00</span></div>",      
+      "isParallel":true,
+      "isSerial":false,
+      "isEnabledPS":false
+    }, 
+    {
+      "reviewerName": "Firstname Lastname",
+      "concorrence":"Pending",
+      "isRemoveHold":true,
+      "emailStatus":"Not Sent",
+      "emailStatusClass":"not-sent",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "isParallel": false,
+      "isSerial": true,
+      "fileUploadAccess": true,
+      "isEnabledPS": true,
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      "hasChild": "has-child",
+      "child": [{
+        "childType": "ALT",
+        "childReviewerName": "Firstname Lastname",
+        "childReviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+        "childIsAuto": true,
+        "childFileUploadAccess": false,
+        "status-text":"Auto",
+        "childComments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+      }, {
+        "childType": "CC",
+        "childReviewerName": "Firstname Lastname",
+        "childReviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+        "childIsAuto": true,
+        "childFileUploadAccess": false,
+        "status-text":"Concurrent",
+        "childComments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+      }]
+    },
+    {
+      "reviewerName": "Jane Doe",
+      "concorrence":"Pending",
+      "isRemoveHold":true,
+      "emailStatus":"Not Sent",
+      "emailStatusClass":"not-sent",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "comments2Reviewer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      "hasReviewerComments":false,      
+      "isParallel":true,
+      "isSerial":false,
+      "isEnabledPS":false
+    },
+    {
+      "reviewerName": "Jane Doe",
+      "concorrence":"Pending",
+      "isRemoveHold":true,
+      "emailStatus":"Not Sent",
+      "emailStatusClass":"not-sent",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "comments2Reviewer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      "hasReviewerComments":false,      
+      "isParallel":true,
+      "isSerial":false,
+      "isEnabledPS":false
+    }
+  ],
+
+  "ccReviewers": [
+    {
+      "type":"CC",
+      "reviewerName": "Mary Meador",
+      "concorrence":"CC Reviewer",
+      "isRemoveHold":true,
+      "emailStatus":"<span>Last sent on</span><br/>00/00/0000  00:00 AM",
+      "emailStatusClass":"sent",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "comments2Reviewer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      "isParallel":true,
+      "isSerial":false,
+      "isEnabledPS":false
+    }],
+
+  "distList":[
+    {
+      "reviewerName": "Firstname Lastname",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "distWhen": "Agreement Marked Active"
+    }
+  ],
+
+  "files":[
+    {
+      "file":"View Space Act Agreement",
+      "description":"PAM Generated Agreement Summar",
+      "isDistFile":false,
+      "hasAddRemove":false
+    },{
+      "file":"View Agreement Summary Form",
+      "description":"PAM Generated Agreement Summar",
+      "isDistFile":false,
+      "hasAddRemove":false
+    },{
+      "file":"Filename2.pdf",
+      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "isDistFile":false,
+      "hasAddRemove":true
+    }
+  ],
+
+  "filesDist":[
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":true
+    }
+  ],
+  "filesToDist":[
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":true
+    },
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":false
+    },
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":false
+    }
+  ],
+  "history":[
+    {
+      "action":"Package Approved",
+      "user":"Mary Meador",
+      "dateTime":"00/00/0000  00:00 AM"
+    },
+    {
+      "action":"Commented :  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod<br/>bibendum laoreet.",
+      "user":"Mary Meador",
+      "dateTime":"00/00/0000  00:00 AM"
+    },
+    {
+      "action":"Email sent to Mary Meador requesting concurrence",
+      "user":"System",
+      "dateTime":"00/00/0000  00:00 AM"
+    },
+    {
+      "action":"Routing Package Created and Routed",
+      "user":"Username",
+      "dateTime":"00/00/0000  00:00 AM"
+    }
+  ]
+}

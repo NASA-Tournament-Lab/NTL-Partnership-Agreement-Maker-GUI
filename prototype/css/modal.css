@@ -1,0 +1,530 @@
+/*button*/
+.button {
+  background: #9b9c9f;
+  min-width: 100px;
+  height: 35px;
+  border-radius: 17.5px;
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 35px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  font-family: open-sans, arial, sans-serif;
+}
+
+.button.primary {
+  background: #3b73b9;
+}
+
+/*input[type="text"]*/
+input[type="text"],
+.dk-select.stylize .dk-selected {
+  border: 1px solid #cbcaca;
+  border-radius: 2px;
+  height: 33px;
+  line-height: 31px;
+  padding: 0 10px;
+  color: #9b9c9f;
+  font-size: 13px;
+}
+  .dk-select.stylize .dk-selected:before,
+  .dk-select.dk-select-open-up.stylize .dk-selected:before {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+  .dk-select.stylize .dk-selected:after {
+    border-left: 0;
+    background-image: url(../i/sprite.png);
+    background-position: -110px 0px;
+    width: 12px;
+    height: 7px;
+    top: 12px;
+    margin: 0 11px 0 0;
+  }
+  .dk-select.dk-select-open-down.stylize .dk-select-options {
+    border-radius: 0;
+    border-color: #cbcaca;
+  }
+    .dk-select.dk-select-open-down.stylize .dk-select-options .dk-option {
+      color: #9b9c9f;
+      font-size: 13px;
+      padding: 0 10px;
+    }
+    .dk-select.dk-select-open-down.stylize .dk-select-options .dk-option.dk-option-highlight,
+    .dk-select.dk-select-open-down.stylize .dk-select-options .dk-option.dk-option-selected:hover {
+      color: #fff;
+      background-color: #08a5e1;
+    }
+    .dk-select.dk-select-open-down.stylize .dk-select-options .dk-option.dk-option-selected {
+      background-color: #fff;
+      color: #9b9c9f;
+    }
+
+/*select dropdowns*/
+.dk-select.stylize {
+  width: 100%;
+}
+
+/*modal-overlay*/
+.modal-overlay {
+  position: fixed;
+  top: 55px;
+  width: 100%;
+  height: calc(100vh - 55px);
+  z-index: 999;
+  background: rgba(37, 41, 50, 0.8);
+  display: none;
+}
+.modal {
+  border-radius: 2px;
+  background: #fff;
+  width: 690px;
+  height: 250px;  /*TODO: verify modal heights based on dynamic contents */
+  z-index: 1000;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 20vh;
+  display: none;
+}
+  .modal .icon-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .modal .modal-header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #e8e8e6;
+    line-height: 60px;
+  }
+    .modal .modal-header h2 {
+      color: #51545b;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 0 20px;
+    }
+  .modal .modal-body {
+    padding: 0 20px;
+  }
+  .modal .modal-footer {
+    width: 100%;
+  }
+    .modal .modal-footer {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 32px;
+    }
+      .modal .modal-footer .button+.button {
+        margin-left: 20px;
+      }
+.modal.confirm-modal {
+  width: 690px;
+  height: 320px;
+}
+  .modal.confirm-modal .modal-body .message {
+    color: #51545b;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    height: 182px;
+    padding: 67px 20px 20px 40px;
+  }
+  
+/* reviewer comment modal */
+.modal.reviewer-comment {
+  width: 690px;
+  min-height: 390px;
+}
+  .modal.reviewer-comment h4,
+  .modal.add-reviewer .comment-section h4 {
+    color: #51545b;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0;
+    margin-top: 41px;
+    margin-bottom: 10px;
+  }
+  .modal.reviewer-comment textarea,
+  .modal.add-reviewer .comment-section textarea {
+    width: 100%;
+    height: 148px;
+    border-radius: 2px;
+    border: 1px solid #cbcaca;
+    color: #9b9c9f;
+    font-size: 13px;
+    resize: vertical;
+    display: block;
+    margin-bottom: 48px;
+    max-height: 250px;
+    padding: 10px;
+  }
+  .modal.add-reviewer .comment-section textarea {
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+  }
+  .modal.add-reviewer .comment-section textarea.no-focus{
+    box-shadow: none;
+  }
+
+/* add reviewer modal */
+.modal.add-reviewer {
+  width: 690px;
+  height: auto;
+}
+.modal.add-reviewer.manual-entry-visible{
+  position: absolute;  
+}
+
+  .modal.add-reviewer .modal-body {
+    padding-top: 40px;
+  }
+    .modal.add-reviewer .modal-body .search-reviewer {
+      margin-bottom: 9px;
+      display: flex;
+    }
+      .modal.add-reviewer .search-reviewer .inputs {
+        display: block;
+        flex: 0 520px;
+      }
+        .modal.add-reviewer .search-reviewer .inputs .input-group {
+          float: left;
+          width: 250px;
+          height: 54px;
+          margin-bottom: 18px;
+        }
+        .modal.add-reviewer .search-reviewer .inputs .input-group:nth-child(even) {
+          margin-left: 20px;
+          width: 230px;
+        }
+          .modal.add-reviewer .search-reviewer .inputs .input-group label {
+            color: #51545b;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 8px;
+          }
+          .modal.add-reviewer .search-reviewer .inputs .input-group input[type="text"],
+          .modal.add-reviewer .search-reviewer .inputs .input-group select {
+            width: 100%;
+            height: 33px;
+          }
+      .modal.add-reviewer .search-reviewer .buttons {      
+        flex: 0 130px;
+        padding-top: 17px;
+      }
+        .modal.add-reviewer .search-reviewer .buttons .button {
+          margin-bottom: 18px;
+          width: 100%;
+        }
+    .modal.add-reviewer .modal-body .search-results {
+      display: none;
+    }
+      .modal.add-reviewer .modal-body .results-title {
+        background-color:  rgba(59, 115, 185, 0.1);
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 13px;
+        color: #51545b;
+      }
+      .modal.add-reviewer .modal-body .results-list {
+        display: block;
+        width: 100%;
+        padding: 0 0 26px 0;
+      }
+        .modal.add-reviewer .modal-body .results-list li {
+          padding: 14px 0;
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 13px;
+          line-height: 13px;
+          border-bottom: 1px solid #e8e8e6;
+        }
+        .modal.add-reviewer .modal-body .results-list li:last-child {
+          padding-top: 13px;
+        }
+          .modal.add-reviewer .modal-body .results-list li .select-result {
+            color: #08a5e1;
+            line-height: 16px;
+            height: 16px;
+            font-weight: 600;
+            display: block;
+            margin: auto;
+            width: 64px;
+            margin-top: 10px;
+          }
+            .modal.add-reviewer .modal-body .results-list li .name {
+              display: block;
+              color: #51545b;
+              margin-bottom: 3px;
+            }
+            .modal.add-reviewer .modal-body .results-list li .designation {
+              display: block;
+              color: #9b9c9f;
+            }
+            .modal.add-reviewer .modal-body .results-list li .select-result span {
+              float: left;
+            }
+            .modal.add-reviewer .modal-body .results-list li .select-result i {
+              margin-left: 9px;
+              float: left;
+            }
+    .modal.add-reviewer .modal-body .manual-add-reviewer {
+      margin-bottom: 9px;
+      display: none;
+    }
+      .modal.add-reviewer .manual-add-reviewer .inputs {
+        width: 100%;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #e8e8e6;
+      }
+        .modal.add-reviewer .manual-add-reviewer .inputs .rw{
+          padding-bottom: 18px;
+          display: flex;
+        }
+        .modal.add-reviewer .manual-add-reviewer .inputs .input-group {
+          width: 300px;
+          height: 54px;
+        }
+        .modal.add-reviewer .manual-add-reviewer .inputs .input-group:nth-child(even) {
+          margin-left: 50px;
+        }
+          .modal.add-reviewer .manual-add-reviewer .inputs .input-group label {
+            color: #51545b;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 8px;
+          }
+          .modal.add-reviewer .manual-add-reviewer .inputs .input-group input[type="text"] {
+            width: 100%;
+            height: 35px;
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+          }
+          .modal.add-reviewer .manual-add-reviewer .inputs .input-group input[type="text"].no-focus{
+            box-shadow: none;
+          }
+          .modal.add-reviewer .comment-section h4 {
+            margin-top: 33px;
+          }
+          .modal.add-reviewer .comment-section textarea {
+            margin-bottom: 21px;
+          }
+            .modal.add-reviewer .radio-group ul li {
+              display: block;
+              overflow: hidden;
+              line-height: 20px;
+              padding-left: 2px;
+            }
+            .modal.add-reviewer .radio-group ul li:first-child {
+              margin-top: 23px;
+            }
+            .modal.add-reviewer .radio-group ul li + li {
+              margin-top: 10px;
+            }
+              .modal.add-reviewer .radio-group .chk,
+              .modal.add-reviewer .radio-group a {
+                float: left;
+              }
+                .modal.add-reviewer .radio-group .chk .text {
+                  font-size: 13px;
+                  margin-right: 5px;
+                }
+  .modal.add-reviewer .modal-footer {
+    display: none;
+  }
+  .modal.add-reviewer.search-results-visible .search-results {
+    display: block;
+  }
+  .modal.add-reviewer.manual-entry-visible .search-reviewer {
+    display: none;
+  }
+  .modal.add-reviewer.manual-entry-visible .modal-footer {
+    display: block;
+  }
+  .modal.add-reviewer.manual-entry-visible .manual-add-reviewer {
+    display: block;
+  }
+
+/* add routing template modal */
+.modal.add-routing-template {
+  width: 690px;
+  height: 360px;
+}
+  .modal.add-routing-template .modal-body {
+    padding-top: 39px;
+    overflow: hidden;
+    min-height: 220px;
+  }
+    .modal.add-routing-template .group {
+      float: left;
+      text-align: left;
+      font-size: 13px;
+      margin-bottom: 55px;
+    }
+    .modal.add-routing-template .group.my-templates {
+      width: 230px;
+    }
+    .modal.add-routing-template.next-group-step .group.my-templates {
+      width: 350px;
+    }
+    .modal.add-routing-template .group.group-templates {
+      width: 300px;
+    }
+    .modal.add-routing-template .group.directorate-templates {
+      width: 229px;
+    }
+    .modal.add-routing-template .group.center-level-templates {
+      width: 190px;
+    }
+      .modal.add-routing-template .group h5,
+      .modal.add-routing-template .template-details label {
+        font-size: 13px;
+        color: #51545b;
+        display: block;
+        margin-bottom: 19px;
+        font-weight: 600;
+      }
+      .modal.add-routing-template .group .chk {
+        display: block;
+        width: 100%;
+      }
+      .modal.add-routing-template .group .chk + .chk {
+        margin-top: 14px;
+      }
+      .modal.add-routing-template.template-details-step .template-details label {
+        margin-bottom: 5px;
+      }
+      .modal.add-routing-template.template-details-step .template-details input[type="text"] {
+        width: 100%;
+      }
+      .modal.add-routing-template.template-details-step .template-details .chk {
+        width: 100%;
+        margin-top: 29px;
+        margin-bottom: 95px;
+      }
+    .modal.add-routing-template .group-templates,
+    .modal.add-routing-template .template-details {
+      display: none;
+    }
+    .modal.next-group-step.next-group-step .group-templates {
+      display: block;
+    }
+    .modal.add-routing-template.next-group-step .center-level-templates,
+    .modal.add-routing-template.next-group-step .directorate-templates {
+      display: none;
+    }
+    .modal.add-routing-template.template-details-step .group {
+      display: none;
+    }
+    .modal.add-routing-template.template-details-step .template-details {
+      display: block;
+    }
+    .modal.add-routing-template .modal-footer .button-save-routing-template {
+      display: none;
+    }
+    .modal.add-routing-template.template-details-step .modal-footer .button-save-routing-template {
+      display: inline-block;
+    }
+    .modal.add-routing-template.template-details-step .modal-footer .button-add-routing-template {
+      display: none;
+    }
+
+/* add person to distribution modal */
+.modal.add-person-modal {
+  width: 690px;
+  height: 380px;
+}
+  .modal.add-person-modal .modal-body {
+    padding-top: 41px;
+  }
+    .modal.add-person-modal .modal-body > ul ul {
+      margin-left: 28px;
+    }
+      .modal.add-person-modal .modal-body > ul ul li {
+        margin-top: 14px;
+      }
+      .modal.add-person-modal .modal-body > ul > li {
+        display: block;
+        float: left;
+        width: 45%;
+        font-size: 13px;
+      }
+      .modal.add-person-modal .modal-body > ul > li:first-child {
+        display: block;
+        float: left;
+        width: 54%;
+        font-size: 13px;
+        margin-top: 0;
+      }
+    .modal.add-person-modal .modal-body > ul {
+      margin-bottom: 32px;
+    }
+    .modal.add-person-modal .input-group {
+      margin-bottom: 50px;
+      width: 100%;
+    }
+      .modal.add-person-modal .input-group label {
+        font-size: 13px;
+        color: #51545b;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .modal.add-person-modal .input-group select {
+        width: 100%;
+      }
+
+/* add file revision modal */
+.modal.add-file-revision {
+  width: 690px;
+  height: 570px;
+}
+  .modal.add-file-revision h4 {
+    color: #51545b;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0;
+    margin-bottom: 7px;
+  }
+  .modal.add-file-revision .description-section {
+    margin-top: 29px;
+  }
+    .modal.add-file-revision textarea {
+      width: 100%;
+      height: 129px;
+      border: 1px solid #9b9c9f;
+      color: #9b9c9f;
+      font-size: 13px;
+      resize: vertical;
+      display: block;
+      margin-bottom: 49px;
+      width: 650px;
+      padding: 10px;
+      -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    }
+  .modal.add-file-revision .modal-body {
+    padding-top: 42px;
+  }
+    .modal.add-file-revision .drag-drop-files-here {
+      width: 230px;
+      height: 170px;
+      float: left;
+      margin-right: 19px;
+    }
+    .modal.add-file-revision .uploaded-files {
+      float: left;
+      min-height: 170px;
+      width: calc(100% - 250px);
+    }
+      .modal.add-file-revision .uploaded-files .file-tree {
+        margin: 20px 14px 20px 19px;
+      }
+

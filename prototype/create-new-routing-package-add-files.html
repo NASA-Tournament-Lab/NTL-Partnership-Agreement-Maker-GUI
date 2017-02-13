@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <title>NASA PAM</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="bower_components/dropkick/build/css/dropkick.css" />
+  <link rel="stylesheet" href="bower_components/datepicker/dist/datepicker.min.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/sprite.css" />
+  <link rel="stylesheet" href="css/editor.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-json="db-create-routings.json" class="has-header">
+  <header class="main-head">
+    <div class="viewport">
+      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+      <h1 class="main-title">Partnership Agreement Maker</h1>
+      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+        <img class="thumb" src="i/user.png" alt="" />
+        </span>
+        <a class="caret icon-caret"></a>
+      </div>
+    </div>
+  </header>
+  <!-- /.main-head -->
+  <nav class="main-nav">
+    <div class="viewport">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="routing-packages.html">Routing Packages</a></li>
+        <li><a href="routing-templates.html">Routing Templates</a></li>
+        <li><a href="my-reviews.html">My Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.main-nav -->
+  <nav class="breadcrumb">
+    <div class="viewport">
+      <ul>
+        <li><a class="nav-lk" href="index.html">Home</a></li>
+        <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
+        <li><a class="nav-lk current">Create New Routing Package</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.breadcrumb -->
+  <main data-role="main" class="main">
+    <div class="bar-page-title">
+      <div class="viewport fx">
+        <h2 class="page-title has-icon"><i class="icon-list"></i>Create New Routing Package</h2>
+      </div>
+    </div>
+    <!-- /.bar-page-title -->
+    <div class="viewport">
+      <div class="step-flow">
+        <ul>
+          <li class="completed"><span class="step"><i class="n">1</i><span class="tx">Add Package Details</span></span>
+            <i class="icon-step-arrow"></i></li>
+          <li class="completed"><span class="step"><i class="n">2</i><span class="tx">Add Reviewers</span></span>
+            <i class="icon-step-arrow"></i></li>
+          <li class="current"><span class="step"><i class="n">3</i><span class="tx"> Add Files</span></span>
+            <i class="icon-step-arrow-a"></i></li>
+          <li><span class="step"><i class="n">4</i><span class="tx">Add Distribution Options</span></span>
+            <i class="icon-step-arrow"></i></li>
+        </ul>
+      </div>
+      <!-- /.step-flow -->
+
+      <div class="step-main-con file-adder" data-add-files="">
+        <div class="files-container">
+          <div class="clearfix template file">
+            <div class="drag-drop-files-here">
+              <div class="info">Drag and drop your file here</div>
+              <div class="or">or</div>
+              <label class="button bordered">
+                <input type="file" required />
+                <span>Browse</span>
+              </label>
+            </div>
+            <div class="description-section">
+              <h4>Description</h4>
+              <textarea></textarea>
+              <a class="button secondary">Upload</a>
+            </div>
+            <div class="uploaded-files">
+              <h4>Uploaded Files</h4>
+              <ul class="file-tree" data-revision="3">
+                <li>
+                  <p class="root">
+                    <a class="icon-collapse toggle-tree"></a>
+                    <span class="file-name">New Lorem Ipsum.pdf</span>
+                    <span class="file-size">126kb</span>
+                    <span class="file-date">12/06/2016</span>
+                    <a class="icon-delete"></a>
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 3</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 2</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 1</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="clearfix file">
+            <div class="drag-drop-files-here">
+              <div class="info">Drag and drop your file here</div>
+              <div class="or">or</div>
+              <label class="button bordered">
+                <input type="file" required />
+                <span>Browse</span>
+              </label>
+            </div>
+            <div class="description-section">
+              <h4>Description</h4>
+              <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis urna at justo condimentum accumsan. Etiam ac congue lorem. Integer a malesuada libero.</textarea>
+              <a class="button secondary">Upload</a>
+            </div>
+            <div class="uploaded-files">
+              <h4>Uploaded Files</h4>
+              <ul class="file-tree" data-revision="3">
+                <li>
+                  <p class="root">
+                    <a class="icon-collapse toggle-tree"></a>
+                    <span class="file-name">New Lorem Ipsum.pdf</span>
+                    <span class="file-size">126kb</span>
+                    <span class="file-date">12/06/2016</span>
+                    <a class="icon-delete"></a>
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 3</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 2</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 1</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="clearfix file">
+            <div class="drag-drop-files-here">
+              <div class="info">Drag and drop your file here</div>
+              <div class="or">or</div>
+              <label class="button bordered">
+                <input type="file" required />
+                <span>Browse</span>
+              </label>
+            </div>
+            <div class="description-section">
+              <h4>Description</h4>
+              <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis urna at justo condimentum accumsan. Etiam ac congue lorem. Integer a malesuada libero.</textarea>
+              <a class="button secondary">Upload</a>
+            </div>
+            <div class="uploaded-files">
+              <h4>Uploaded Files</h4>
+              <ul class="file-tree" data-revision="3">
+                <li>
+                  <p class="root">
+                    <a class="icon-collapse toggle-tree"></a>
+                    <span class="file-name">New Lorem Ipsum.pdf</span>
+                    <span class="file-size">126kb</span>
+                    <span class="file-date">12/06/2016</span>
+                    <a class="icon-delete"></a>
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 3</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 2</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="revision-name">Replace <span class="revision">Revision 1</span></span>
+                        <span class="file-size">126kb</span>
+                        <span class="file-date">12/06/2016</span>
+                        <a class="icon-delete"></a>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.files-container -->
+
+        <a class="button secondary button-add-more-files" onclick="addFiles()">Add More Files</a>
+      </div>
+      <!-- /.step-main-con -->
+      <footer class="bar-btn">
+        <div class="lt">
+          <a href="create-new-routing-package-add-reviewers.html" class="btn">Previous</a>
+        </div>
+        <div class="rt">
+          <a href="routing-packages.html" class="btn">Save &amp; Exit</a>
+          <a href="routing-packages.html" class="btn">Save as Draft</a>
+          <a href="create-new-routing-package-add-dist-options.html" class="btn">Next</a>
+        </div>
+      </footer>
+      <!-- /.bar-btn -->
+
+    </div>
+    <!-- /.viewport -->
+  </main>
+
+  <!-- JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>
+  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="bower_components/datepicker/dist/datepicker.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

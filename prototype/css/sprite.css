@@ -1,0 +1,198 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-caret-blue-sm {
+  background-image: url(../i/sprite.png);
+  background-position: -58px -212px;
+  width: 8px;
+  height: 5px;
+}
+.icon-caret-blue {
+  background-image: url(../i/sprite.png);
+  background-position: -161px -171px;
+  width: 12px;
+  height: 7px;
+}
+.icon-caret-dark {
+  background-image: url(../i/sprite.png);
+  background-position: -193px -171px;
+  width: 12px;
+  height: 7px;
+}
+.icon-caret-i {
+  background-image: url(../i/sprite.png);
+  background-position: -29px -212px;
+  width: 9px;
+  height: 5px;
+}
+.icon-caret {
+  background-image: url(../i/sprite.png);
+  background-position: -205px -145px;
+  width: 9px;
+  height: 5px;
+}
+.icon-close {
+  background-image: url(../i/sprite.png);
+  background-position: -125px -40px;
+  width: 20px;
+  height: 20px;
+}
+.icon-collapse.disabled {
+  background-image: url(../i/sprite.png);
+  background-position: -98px -171px;
+  width: 12px;
+  height: 11px;
+}
+.icon-collapse {
+  background-image: url(../i/sprite.png);
+  background-position: -66px -171px;
+  width: 12px;
+  height: 11px;
+}
+.icon-datepicker {
+  background-image: url(../i/sprite.png);
+  background-position: -205px 0px;
+  width: 18px;
+  height: 17px;
+}
+.icon-delete {
+  background-image: url(../i/sprite.png);
+  background-position: 0px -212px;
+  width: 9px;
+  height: 9px;
+}
+.icon-fwd-arrow {
+  background-image: url(../i/sprite.png);
+  background-position: 0px -132px;
+  width: 18px;
+  height: 19px;
+}
+.icon-help-sm {
+  background-image: url(../i/sprite.png);
+  background-position: -130px -171px;
+  width: 11px;
+  height: 11px;
+}
+.icon-help {
+  background-image: url(../i/sprite.png);
+  background-position: -125px -80px;
+  width: 20px;
+  height: 20px;
+}
+.icon-list {
+  background-image: url(../i/sprite.png);
+  background-position: -165px -80px;
+  width: 20px;
+  height: 18px;
+}
+.icon-move-d.disabled {
+  background-image: url(../i/sprite.png);
+  background-position: -165px -40px;
+  width: 20px;
+  height: 20px;
+}
+.icon-move-d {
+  background-image: url(../i/sprite.png);
+  background-position: -165px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-move-u.disabled {
+  background-image: url(../i/sprite.png);
+  background-position: -70px -70px;
+  width: 20px;
+  height: 20px;
+}
+.icon-move-u {
+  background-image: url(../i/sprite.png);
+  background-position: -125px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-nasa-logo {
+  background-image: url(../i/sprite.png);
+  background-position: 0px 0px;
+  width: 50px;
+  height: 42px;
+}
+.next.disabled {
+  background-image: url(../i/sprite.png);
+  background-position: -114px -132px;
+  width: 18px;
+  height: 18px;
+}
+.next {
+  background-image: url(../i/sprite.png);
+  background-position: -76px -132px;
+  width: 18px;
+  height: 18px;
+}
+.icon-pop-a {
+  background-image: url(../i/sprite.png);
+  background-position: 0px -171px;
+  width: 10px;
+  height: 21px;
+}
+.previous.disabled {
+  background-image: url(../i/sprite.png);
+  background-position: -152px -132px;
+  width: 18px;
+  height: 18px;
+}
+.previous {
+  background-image: url(../i/sprite.png);
+  background-position: -38px -132px;
+  width: 18px;
+  height: 18px;
+}
+.icon-radio:checked {
+  background-image: url(../i/sprite.png);
+  background-position: -205px -37px;
+  width: 16px;
+  height: 16px;
+}
+.icon-radio {
+  background-image: url(../i/sprite.png);
+  background-position: -205px -73px;
+  width: 16px;
+  height: 16px;
+}
+.icon-select {
+  background-image: url(../i/sprite.png);
+  background-position: -205px -109px;
+  width: 16px;
+  height: 16px;
+}
+.icon-step-arrow-a {
+  background-image: url(../i/sprite.png);
+  background-position: 0px -62px;
+  width: 35px;
+  height: 50px;
+}
+.icon-step-arrow {
+  background-image: url(../i/sprite.png);
+  background-position: -70px 0px;
+  width: 35px;
+  height: 50px;
+}
+.icon-tick {
+  background-image: url(../i/sprite.png);
+  background-position: -30px -171px;
+  width: 16px;
+  height: 12px;
+}

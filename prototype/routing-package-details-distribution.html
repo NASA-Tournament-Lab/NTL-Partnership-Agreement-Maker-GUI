@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <title>NASA PAM</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="bower_components/dropkick/build/css/dropkick.css" />
+  <link rel="stylesheet" href="bower_components/datepicker/dist/datepicker.min.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/sprite.css" />
+  <link rel="stylesheet" href="css/editor.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-json="db-routing-packages-details.json" class="has-header">
+  <header class="main-head">
+    <div class="viewport">
+      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+      <h1 class="main-title">Partnership Agreement Maker</h1>
+      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+        <img class="thumb" src="i/user.png" alt="" />
+        </span>
+        <a class="caret icon-caret"></a>
+      </div>
+    </div>
+  </header>
+  <!-- /.main-head -->
+  <nav class="main-nav">
+    <div class="viewport">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="routing-packages.html">Routing Packages</a></li>
+        <li><a href="routing-templates.html">Routing Templates</a></li>
+        <li><a href="my-reviews.html">My Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.main-nav -->
+  <nav class="breadcrumb">
+    <div class="viewport">
+      <ul>
+        <li><a class="nav-lk" href="index.html">Home</a></li>
+        <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
+        <li><a class="nav-lk current">Routing Package Details</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.breadcrumb -->
+  <main data-role="main" class="main">
+    <div class="bar-page-title">
+      <div class="viewport fx">
+        <h2 class="page-title has-icon"><i class="icon-list"></i>Routing Package Details</h2>
+      </div>
+    </div>
+    <!-- /.bar-page-title -->
+    <div class="viewport">
+
+      <div class="table-container step-veiw has-spacing">
+        <section class="table-section">
+          <header class="head fx">
+            <h6 class="table-title">Lorem Package Name</h6>
+            <a class="lk lk-edit">Edit</a>
+          </header>
+          <table class="datatable datatable-routing datatable-pkd-name norm-bdr" data-repeaters="loremPkgName">
+            <thead>
+              <tr class="highlighted">
+                <th><span>Routing #</span></th>
+                <th><span>PAM #</span> </th>
+                <th><span>Group</span></th>
+                <th><span>Administrator</span></th>
+                <th><span>Status</span></th>
+                <th><span>Routing Started on</span></th>
+                <th><span>Comments</span></th>
+              </tr>
+            </thead>
+
+            <tbody data-repeat="" class="template">
+              <tr>
+                <td><span data-bind="routingN"></span></td>
+                <td><span data-bind="pamN"></span></td>
+                <td><span data-bind="group"></span></td>
+                <td><span data-bind="administrator"></span></td>
+                <td><span data-bind="status"></span></td>
+                <td><span data-bind="routingStartedOn"></span></td>
+                <td><span data-bind="comments"></span></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- /.datatable -->
+        </section>
+        <!-- /.table-section datatable-pkd-details -->
+
+        <nav class="bar-tabnav">
+          <ul>
+            <li><a href="routing-package-details.html">Reviewers &amp; Files</a></li>
+            <li><a href="routing-package-details-distribution.html" class="on">Distribution Options</a></li>
+            <li><a href="routing-packages-complete-history.html">History</a></li>
+          </ul>
+        </nav>
+        <!-- /.bar-tabnav -->
+        <section class="table-section has-spacing-t-md">
+          <header class="head norm fx">
+            <h6 class="table-title">Distribution List (in order of Review)</h6>
+            <a class="lk lk-edit modal-trigger" data-show-modal="add-person-to-distribution-modal">Add Person for Distribution</a>
+          </header>
+          <table class="datatable datatable-routing datatable-dist norm-bdr" data-repeaters="distList">
+            <thead>
+              <tr>
+                <th><span>Reviewer</span></th>
+                <th><span>Comments to the Reviewer</span> </th>
+                <th><span>Distributed when</span></th>
+              </tr>
+            </thead>
+
+            <tbody data-repeat="" class="template">
+              <tr>
+                <!-- reviewer -->
+                <td>
+                  <div class="info-td">
+                    <h6 class="t" data-bind="reviewerName">Reviewer</h6>
+                    <div class="comment-tx" data-bind="reviewerInfo"></div>
+                    <div class="rw-actions">
+                      <a class="lk lk-add-edit">Edit</a>
+                      <a class="lk lk-remove">Remove</a>
+                    </div>
+                  </div>
+                </td>
+                <!-- Comments -->
+                <td>
+                  <div class="info-td">
+                    <h6 class="t">Comments to Reviewer</h6>
+                    <div class="comment-tx" data-bind="comments"></div>
+                  </div>
+                </td>
+                <!-- dist when -->
+                <td><span data-bind="distWhen"></span></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- /.datatable -->
+        </section>
+        <!-- /.table-section -->
+
+        <section class="table-section has-spacing-t-sm has-spacing-b">
+          <h6 class="table-title">Files to Distribute</h6>
+          <table class="datatable datatable-routing datatable-dist norm-bdr" data-repeaters="filesToDist">
+            <thead>
+              <tr>
+                <th><span>File</span></th>
+                <th><span>Description</span> </th>
+                <th><span>Distribute File</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-repeat="" class="template">
+                <!-- reviewer -->
+                <td>
+                  <a class="lk" data-bind="file" href="data/Filename.pdf.temp" target="_blank"></a>
+                </td>
+                <td> <span data-bind="description"></span> </td>
+                <td>
+                  <label class="chk chk-lg">
+                    <input type="checkbox" class="chkctrl" data-is-checked="isDistFile"><i class="icon"></i><span class="tx"></span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- /.datatable -->
+        </section>
+        <!-- /.table-section -->
+      </div>
+      <!-- /.table-container -->
+
+      <div class="design-comment at-top spacing-sm">
+        <div class="summary">* It is a requirement to use a "Center Level" routing template before starting this routing for concurrence. The "Save and Send" button will not be able to be used until a center level template is inserted.
+          <br/> To do this navigate back to the "Add Reviewers" section and click on the "Add Routing Template" link and select the appropriate Center Level Template.
+        </div>
+      </div>
+      <!-- /.design-comment -->
+    </div>
+    <!-- /.viewport -->
+  </main>
+
+  <!-- modal -->
+  <div id="add-person-to-distribution-modal" class="modal add-person-modal">
+    <a class="icon-close close-modal"></a>
+    <div class="modal-header">
+      <h2>Add Person to Distribution</h2>
+    </div>
+    <div class="modal-body">
+      <ul class="clearfix">
+        <li>
+          <label class="chk">
+            <input type="checkbox" checked="checked" class="chkctrl" />
+            <i class="icon"></i>
+            <span class="text">1. Reviewer Name</span>
+          </label>
+          <ul>
+            <li>
+              <label class="chk">
+                <input type="checkbox" checked="checked" class="chkctrl" />
+                <i class="icon"></i>
+                <span class="text">ALT-T Reviewer Name</span>
+              </label>
+            </li>
+            <li>
+              <label class="chk">
+                <input type="checkbox" class="chkctrl" />
+                <i class="icon"></i>
+                <span class="text">CC-S Reviewer Name</span>
+              </label>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <label class="chk">
+            <input type="checkbox" class="chkctrl" />
+            <i class="icon"></i>
+            <span class="text">2. Reviewer Name</span>
+          </label>
+        </li>
+      </ul>
+      <div class="input-group clearfix">
+        <label for="distributedWhen">Distributed when</label>
+        <select class="stylize" id="distributedWhen">
+          <option value="agreementMarkedActive">Agreement Marked Active</option>
+          <option value="anotherOption">Another Option</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer clearfix">
+      <a class="button close-modal">Cancel</a>
+      <a class="button primary close-modal">Add</a>
+    </div>
+  </div>
+  <!-- /#add-person-to-distribution-modal.modal -->
+  <div class="modal-overlay"></div>
+  <!-- /.modal-overlay -->
+  <!-- modal-end -->
+  <!-- JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>
+  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="bower_components/datepicker/dist/datepicker.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

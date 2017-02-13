@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <title>NASA PAM</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="bower_components/dropkick/build/css/dropkick.css" />
+  <link rel="stylesheet" href="bower_components/datepicker/dist/datepicker.min.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/sprite.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="has-header">
+  <header class="main-head">
+    <div class="viewport">
+      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+      <h1 class="main-title">Partnership Agreement Maker</h1>
+      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+        <img class="thumb" src="i/user.png" alt="" />
+        </span>
+        <a class="caret icon-caret"></a>
+      </div>
+    </div>
+  </header>
+  <!-- /.main-head -->
+  <nav class="main-nav">
+    <div class="viewport">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="routing-packages.html">Routing Packages</a></li>
+        <li class="active"><a href="routing-templates.html">Routing Templates</a></li>
+        <li><a href="my-reviews.html">My Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.main-nav -->
+  <main data-role="main" class="main">
+    <div class="bar-page-title">
+      <div class="viewport fx">
+        <h2 class="page-title has-icon"><i class="icon-list"></i>Routing Templates</h2>
+        <div class="rt">
+          <a href="create-new-routing-template.html" class="btn md">Create New Routing Template</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.bar-page-title -->
+    <div class="viewport">
+      <nav class="bar-tabnav">
+        <ul>
+          <li><a href="routing-templates.html">Group Templates</a></li>
+          <li><a href="routing-templates-my-templates.html" class="on">My Templates</a></li>
+        </ul>
+
+        <div class="rt"></div>
+      </nav>
+      <!-- /.bar-tabnav -->
+      <!--  modal -->
+
+      <div class="table-container jq-datatable has-spacing">
+        <table data-datatable="db-routing-my-template.json" data-enabled-search="" data-linked-id="draft-count" id="routing-pkg" class="datatable">
+          <thead>
+            <tr>
+              <th><span class="sortable">Template Name<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Routing Group<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Created on<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Created by<i class="icon-caret-dark"></i></span></th>
+              <th><span class="sortable">Actions<i class="icon-caret-dark"></i></span></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- /.table-container -->
+    </div>
+    <!-- /.viewport -->
+  </main>
+
+  <!-- JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>
+  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="bower_components/datepicker/dist/datepicker.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

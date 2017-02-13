@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <title>NASA PAM</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="bower_components/dropkick/build/css/dropkick.css" />
+  <link rel="stylesheet" href="bower_components/datepicker/dist/datepicker.min.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/sprite.css" />
+  <link rel="stylesheet" href="css/editor.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-json="db-routing-packages-details.json" class="has-header">
+  <header class="main-head">
+    <div class="viewport">
+      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+      <h1 class="main-title">Partnership Agreement Maker</h1>
+      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+        <img class="thumb" src="i/user.png" alt="" />
+        </span>
+        <a class="caret icon-caret"></a>
+      </div>
+    </div>
+  </header>
+  <!-- /.main-head -->
+  <nav class="main-nav">
+    <div class="viewport">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="routing-packages.html">Routing Packages</a></li>
+        <li><a href="routing-templates.html">Routing Templates</a></li>
+        <li><a href="my-reviews.html">My Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.main-nav -->
+  <nav class="breadcrumb">
+    <div class="viewport">
+      <ul>
+        <li><a class="nav-lk" href="index.html">Home</a></li>
+        <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
+        <li><a class="nav-lk current">Routing Package Details</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.breadcrumb -->
+  <main data-role="main" class="main">
+    <div class="bar-page-title">
+      <div class="viewport fx">
+        <h2 class="page-title has-icon"><i class="icon-list"></i>Routing Package Details</h2>
+      </div>
+    </div>
+    <!-- /.bar-page-title -->
+    <div class="viewport">
+
+      <div class="table-container step-veiw has-spacing">
+        <section class="table-section">
+          <header class="head fx">
+            <h6 class="table-title">Lorem Package Name</h6>
+            <a class="lk lk-edit">Edit</a>
+          </header>
+          <table class="datatable datatable-routing datatable-pkd-name norm-bdr" data-repeaters="loremPkgName">
+            <thead>
+              <tr class="highlighted">
+                <th><span>Routing #</span></th>
+                <th><span>PAM #</span> </th>
+                <th><span>Group</span></th>
+                <th><span>Administrator</span></th>
+                <th><span>Status</span></th>
+                <th><span>Routing Started on</span></th>
+                <th><span>Comments</span></th>
+              </tr>
+            </thead>
+
+            <tbody data-repeat="" class="template">
+              <tr>
+                <td><span data-bind="routingN"></span></td>
+                <td><span data-bind="pamN"></span></td>
+                <td><span data-bind="group"></span></td>
+                <td><span data-bind="administrator"></span></td>
+                <td><span data-bind="status"></span></td>
+                <td><span data-bind="routingStartedOn"></span></td>
+                <td><span data-bind="comments"></span></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- /.datatable -->
+        </section>
+        <!-- /.table-section datatable-pkd-details -->
+
+        <nav class="bar-tabnav">
+          <ul>
+            <li><a href="routing-package-details.html">Reviewers &amp; Files</a></li>
+            <li><a href="routing-package-details-distribution.html">Distribution Options</a></li>
+            <li><a href="routing-packages-complete-history.html" class="on">History</a></li>
+          </ul>
+        </nav>
+        <!-- /.bar-tabnav -->
+        <div class="table-section has-spacing-t-sm">
+          <table class="datatable datatable-routing datatable-history norm-bdr" data-repeaters="history">
+            <thead>
+              <tr>
+                <th><span>Action</span></th>
+                <th><span>User</span> </th>
+                <th><span>Date / Time</span></th>
+              </tr>
+            </thead>
+
+            <tbody data-repeat="" class="template">
+              <tr>
+                <td><span data-bind="action"></span></td>
+                <td><span data-bind="user"></span></td>
+                <td><span data-bind="dateTime"></span></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- /.datatable -->
+        </div>
+        <!-- /.table-section -->
+      </div>
+      <!-- /.table-container -->
+    </div>
+    <!-- /.viewport -->
+  </main>
+
+  <!-- JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>
+  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="bower_components/datepicker/dist/datepicker.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

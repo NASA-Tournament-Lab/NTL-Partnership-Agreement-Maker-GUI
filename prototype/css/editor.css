@@ -1,0 +1,104 @@
+/* Open sans font*/
+/* Open sans font*/
+@font-face {
+  font-family: 'open-sans';
+  font-weight: 300;
+  src: url('../fonts/open-sans/OpenSans-Light-webfont.eot');
+  src: url('../fonts/open-sans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/open-sans/OpenSans-Light-webfont.woff') format('woff'),
+       url('../fonts/open-sans/OpenSans-Light-webfont.ttf') format('truetype'),
+       url('../fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+}
+@font-face {
+  font-family: 'open-sans';
+  font-weight: 400;
+  src: url('../fonts/open-sans/OpenSans-Regular-webfont.eot');
+  src: url('../fonts/open-sans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/open-sans/OpenSans-Regular-webfont.woff') format('woff'),
+       url('../fonts/open-sans/OpenSans-Regular-webfont.ttf') format('truetype'),
+       url('../fonts/open-sans/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+}
+@font-face {
+  font-family: 'open-sans';
+  font-weight: 600;
+  src: url('../fonts/open-sans/OpenSans-Semibold-webfont.eot');
+  src: url('../fonts/open-sans/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/open-sans/OpenSans-Semibold-webfont.woff') format('woff'),
+       url('../fonts/open-sans/OpenSans-Semibold-webfont.ttf') format('truetype'),
+       url('../fonts/open-sans/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+}
+@font-face {
+  font-family: 'open-sans';
+  font-weight: 700;
+  src: url('../fonts/open-sans/OpenSans-Bold-webfont.eot');
+  src: url('../fonts/open-sans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/open-sans/OpenSans-Bold-webfont.woff') format('woff'),
+       url('../fonts/open-sans/OpenSans-Bold-webfont.ttf') format('truetype'),
+       url('../fonts/open-sans/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+}
+@font-face {
+  font-family: 'open-sans';
+  font-weight: 800;
+  src: url('../fonts/open-sans/OpenSans-ExtraBold-webfont.eot');
+  src: url('../fonts/open-sans/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/open-sans/OpenSans-ExtraBold-webfont.woff') format('woff'),
+       url('../fonts/open-sans/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+       url('../fonts/open-sans/OpenSans-ExtraBold-webfont.svg#open_sansextrabold') format('svg');
+}
+  /*italic*/
+@font-face {
+  font-family: 'open-sans';
+  src: url("../fonts/open-sans/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic; }
+@font-face {
+  font-family: 'open-sans';
+  src: url("../fonts/open-sans/OpenSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'open-sans';
+  src: url("../fonts/open-sans/OpenSans-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic; }
+@font-face {
+  font-family: 'open-sans';
+  src: url("../fonts/open-sans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic; }
+
+
+/*editor-wrap*/
+.editor-wrap *{border:0;padding:0;margin:0;background:50% 50% no-repeat;text-decoration:none;color:inherit;box-sizing:border-box;font-weight:400}
+  .editor-wrap :focus{outline:0}
+  .editor-wrap  b, .editor-wrap  b *,.editor-wrap  strong,.editor-wrap  strong *{font-weight:700}
+  .editor-wrap  ol,.editor-wrap ul{list-style:none}
+  .editor-wrap button,.editor-wrap input,.editor-wrap  input:not([type]),input[type=color],.editor-wrap input[type=text],.editor-wrap input[type=time],.editor-wrap input[type=url],.editor-wrap input[type=week],.editor-wrap input[type=button],.editor-wrap input[type=reset],.editor-wrap input[type=submit],.editor-wrap input[type=date],.editor-wrap input[type=datetime],.editor-wrap input[type=datetime-local],.editor-wrap input[type=email],.editor-wrap input[type=month],.editor-wrap input[type=number],.editor-wrap input[type=password],.editor-wrap input[type=search],.editor-wrap input[type=tel],.editor-wrap  pre,.editor-wrap  select,.editor-wrap  textarea{font:inherit}
+
+/*mce-panel*/
+.mce-panel{border-color: #cbcaca;}
+  .mce-pannel{background: #e8e8e6;}
+
+/*.mce-container*/
+.mce-container textarea{display:initial}
+
+/*mce-content-body*/
+.mce-content-body{font-family: open-sans, arial, sans-serif;font-size:14px;color:#9b9c9f;padding:0 25px 25px}
+  .mce-content-body h1,.mce-content-body h2,.mce-content-body h3,.mce-content-body h4,.mce-content-body h5,.mce-content-body h6{font-family:open-sans, arial, sans-serif;font-weight:200;line-height:1.4em;margin:25px 0 15px}
+  .mce-content-body h1{font-size:34px}
+  .mce-content-body h2{font-size:30px}
+  .mce-content-body h3{font-size:26px}
+  .mce-content-body h4{font-size:22px}
+  .mce-content-body h5{font-size:18px}
+  .mce-content-body h6{font-size:14px}
+  .mce-content-body p{margin:25px 0}
+  .mce-content-body ol,.mce-content-body ul{margin-left:15px;list-style-position:outside;margin-bottom:20px}
+  .mce-content-body ol li,.mce-content-body ul li{margin-left:10px;margin-bottom:10px;color:#9b9c9f}
+  .mce-content-body ul{list-style-type:disc}
+  .mce-content-body ol{list-style-type:decimal}
+  .mce-content-body a[href]{text-decoration:underline}
+  .mce-content-body table{width:100%;border-spacing:0;border-collapse:separate;border:1px solid #aaa}
+  .mce-content-body table tr:nth-child(even){background:#FAFAFA}
+  .mce-content-body table caption,.mce-content-body table td,.mce-content-body table th{padding:15px 7px;font:inherit}
+  .mce-content-body table th{font-weight:400;color:#9b9c9f;background-position:100% 100%;background-size:2px 10px;background-repeat:no-repeat}
+  .mce-content-body table th:last-child{background:0 0}

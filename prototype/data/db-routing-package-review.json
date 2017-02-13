@@ -1,0 +1,73 @@
+{
+  "pkgDetails":[{
+      "title": "Lorem Package Name",
+      "group": "Lorem group name",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget."
+    }],
+  "routings": [
+    {
+      "reviewerName": "Mary Meador",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "isParallel":true,
+      "isSerial":false,
+      "fileUploadAccess": true,   
+      "isEnabledPS":false,
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+    }, {
+      "reviewerName": "Firstname Lastname",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "isParallel":false,
+      "isSerial":true,
+      "fileUploadAccess": true,   
+      "isEnabledPS":true,
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      "hasChild":"has-child",
+      "child": [{
+        "childType": "ALT",
+        "childReviewerName": "Firstname Lastname",
+        "childReviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+        "childIsAuto": true,
+        "childFileUploadAccess": false,
+        "childComments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+      },
+      {
+        "childType": "CC-S",
+        "childReviewerName": "Firstname Lastname",
+        "childReviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+        "childIsAuto": false,
+        "childFileUploadAccess": false,
+        "childComments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+      }]
+    }
+  ],
+
+  "distList":[
+    {
+      "reviewerName": "Firstname Lastname",
+      "reviewerInfo": "Research Technical Engineer & Applicant<br/>maryann.meador@nasa.gov<br/>000.000.0000",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "distWhen": "Agreement Marked Active"
+    }
+  ],
+
+  "files":[
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":true
+    },
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":false
+    }
+  ],
+
+  "filesDist":[
+    {
+      "file":"Filename.pdf",
+      "description":"Lorem ipsum dolor si amet file description text",
+      "isDistFile":true
+    }
+  ]
+}
