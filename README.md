@@ -1,7 +1,6 @@
 # NTL-Partnership-Agreement-Maker-GUI
 
 # Prequsites
- - NodeJS
  - bower
 
 # Installation
