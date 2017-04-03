@@ -332,6 +332,11 @@ input[type="text"],
               .modal.add-reviewer .radio-group a {
                 float: left;
               }
+              .modal.add-reviewer .radio-group .icon-help {
+                float: none;
+                vertical-align: middle;
+                margin-left: 4px;
+              }
                 .modal.add-reviewer .radio-group .chk .text {
                   font-size: 13px;
                   margin-right: 5px;
@@ -528,3 +533,119 @@ input[type="text"],
         margin: 20px 14px 20px 19px;
       }
 
+/* fix layout issue when smaller than 768px width */
+@media (max-width: 767px) {
+
+.modal .modal-header {
+  height: 50px;
+} 
+  .modal .modal-header h2 {
+    line-height: 50px;
+  }
+
+.modal .icon-close {
+  top: 15px;
+}
+  /* add reviewer modal */
+.modal.add-reviewer,
+.modal.reviewer-comment,
+.modal.add-file-revision {
+  width: 355px;
+  position: absolute;
+}
+  .modal.reviewer-comment {
+    min-height: 355px;
+  }
+  .modal.add-file-revision .modal-body {
+    padding-top: 16px;
+  }
+  .modal.reviewer-comment textarea {
+    margin-bottom: 28px;
+  }
+  .modal.add-file-revision {
+    height: auto;
+  }
+  .modal.add-file-revision .drag-drop-files-here {
+    width: auto;
+    float: none;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 16px;
+    padding-bottom: 28px;
+  }
+  .modal.add-file-revision .uploaded-files {
+    float: none;
+    width: auto;
+    min-height: 0;
+    margin-left: 5px;
+  }
+    .modal.add-file-revision .uploaded-files .file-tree {
+      margin: 20px 0;
+    }
+  .modal.add-file-revision .description-section {
+    margin-top: 12px;
+  }
+  .modal.add-file-revision textarea {
+    width: 100%;
+  }
+.modal.add-routing-template{
+  position: absolute;
+}
+  .modal.add-reviewer .modal-body .search-reviewer {
+    display: block;
+  }
+  .modal.add-reviewer.manual-entry-visible .search-reviewer {
+    display: none;
+  }
+  .modal.add-reviewer .search-reviewer .inputs {
+    flex: none;
+  }
+  .modal.add-reviewer .search-reviewer .inputs .input-group:nth-child(even) {
+    margin-left: 0;
+    width: 100%;
+  }
+        .modal.add-reviewer .manual-add-reviewer .inputs .input-group {
+          width: 100%;
+        }
+        .modal.add-reviewer .search-reviewer .inputs .input-group {
+          width: 100%;
+        }
+      .modal.add-reviewer .search-reviewer .buttons {      
+        flex: none;
+        display: block;
+        padding-top: 17px;
+      }
+
+/* add routing template modal */
+.modal.add-routing-template {
+  width: 355px;
+  height: auto;
+  top: 66px;
+}
+  .modal.add-routing-template .modal-body {
+    padding-top: 20px;
+  }
+    .modal.add-routing-template .group {
+      float: none;
+      margin-bottom: 20px;
+    }
+
+/* add person to distribution modal */
+.modal.add-person-modal {
+  width: 355px;
+}
+  /* .modal.confirm-modal */
+  .modal.confirm-modal {
+    width: 355px;
+    height: auto;
+  }
+  .modal.confirm-modal .modal-body .message {
+    font-size: 15px;
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+  }
+  .modal.add-reviewer .radio-group ul li {
+    padding-right: 10px;
+  }
+}

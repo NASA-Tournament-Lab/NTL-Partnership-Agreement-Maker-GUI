@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <title>NASA PAM</title>
@@ -21,100 +21,127 @@
 </head>
 
 <body class="has-header">
-  <header class="main-head">
-    <div class="viewport">
-      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
-      <h1 class="main-title">Partnership Agreement Maker</h1>
-      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
-        <img class="thumb" src="i/user.png" alt="" />
-        </span>
-        <a class="caret icon-caret"></a>
+  <aside class="mobile-aside hide">
+    <div class="layer-bg"></div>
+    <div class="navigation-menu">
+      <div class="top-box">
+        <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+            libDest
+            </span>
+          <a class="caret icon-caret"></a>
+        </div>
       </div>
-    </div>
-  </header>
-  <!-- /.main-head -->
-  <nav class="main-nav">
-    <div class="viewport">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="routing-packages.html">Routing Packages</a></li>
-        <li><a href="routing-templates.html">Routing Templates</a></li>
-        <li><a href="my-reviews.html">My Reviews</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /.main-nav -->
-  <nav class="breadcrumb">
-    <div class="viewport">
-      <ul>
-        <li><a class="nav-lk" href="index.html">Home</a></li>
-        <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
-        <li><a class="nav-lk current">Create New Routing Package</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /.breadcrumb -->
-  <main data-role="main" class="main">
-    <div class="bar-page-title">
-      <div class="viewport fx">
-        <h2 class="page-title has-icon"><i class="icon-list"></i>Create New Routing Package</h2>
-      </div>
-    </div>
-    <!-- /.bar-page-title -->
-    <div class="viewport">
-      <div class="step-flow">
+      <!-- end .menu-white -->
+      <nav class="nav">
         <ul>
-          <li class="current"><span class="step"><i class="n">1</i><span class="tx">Add Package Details</span></span>
-            <i class="icon-step-arrow-a"></i></li>
-          <li><span class="step"><i class="n">2</i><span class="tx">Add Reviewers</span></span>
-            <i class="icon-step-arrow"></i></li>
-          <li><span class="step"><i class="n">3</i><span class="tx"> Add Files</span></span>
-            <i class="icon-step-arrow"></i></li>
-          <li><span class="step"><i class="n">4</i><span class="tx">Add Distribution Options</span></span>
-            <i class="icon-step-arrow"></i></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="routing-packages.html">Routing Packages</a></li>
+          <li><a href="routing-templates.html">Routing Templates</a></li>
+          <li><a href="my-reviews.html">My Reviews</a></li>
+        </ul>
+      </nav>
+      <!-- end .nav -->
+    </div>
+  </aside>
+  <!-- end .mobile-aside -->
+  <div class="wrapper">
+    <header class="main-head">
+      <div class="viewport">
+        <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+        <h1 class="main-title">Partnership Agreement Maker</h1>
+        <a href="javascript:;" class="btn-icon-menu"></a>
+        <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+          libDest
+          </span>
+          <a class="caret icon-caret"></a>
+        </div>
+      </div>
+    </header>
+    <!-- /.main-head -->
+    <nav class="main-nav">
+      <div class="viewport">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="routing-packages.html">Routing Packages</a></li>
+          <li><a href="routing-templates.html">Routing Templates</a></li>
+          <li><a href="my-reviews.html">My Reviews</a></li>
         </ul>
       </div>
-      <!-- /.step-flow -->
-
-      <div class="bar-pkg-config">
-        <div class="lt">
-          <input type="text" placeholder="Routing Package Title" class="tx-title text-ctrl" />
-        </div>
-        <div class="rt">
-          <label class="select-wrap">
-            <select class="stylize">
-              <option>Routing Package Title</option>
-              <option>Routing Package</option>
-              <option>Routing Package 1</option>
-              <option>Routing Package 2</option>
-            </select>
-          </label>
+    </nav>
+    <!-- /.main-nav -->
+    <nav class="breadcrumb">
+      <div class="viewport">
+        <ul>
+          <li><a class="nav-lk" href="index.html">Home</a></li>
+          <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
+          <li><a class="nav-lk current">Create New Routing Package</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /.breadcrumb -->
+    <main data-role="main" class="main">
+      <div class="bar-page-title">
+        <div class="viewport fx">
+          <h2 class="page-title has-icon"><i class="icon-list"></i>Create New Routing Package</h2>
         </div>
       </div>
-      <!-- /.bar-config -->
-
-      <div class="editor-section">
-        <h6>Comments</h6>
-
-        <div class="editor-wrap">
-          <textarea id="editor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis urna at justo condimentum accumsan. Etiam ac congue lorem. Integer a malesuada libero. In vel pharetra eros. Cum sociis na-toque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet erat tinci-dunt, eleifend eros non, semper lectus. Fusce sodales rutrum porttitor. Nullam pharetra quis dui vel elementum. Proin urna lorem, tempor a vehicula in, congue venenatis purus. Suspendisse congue tempor est, in rhoncus est luctus auctor. Fusce venenatis vel enim in viverra. Maecenas justo elit, consectetur nec convallis non, sodales feugiat ligula. Etiam tincidunt dui at lacus dignissim, vel luctus diam tristique. Ut eget volutpat nisi, ac interdum nisl. Suspendisse quis ex et massa placerat maximus. Proin diam quam, ornare id ultricies sed, ultrices id mi.</textarea>
+      <!-- /.bar-page-title -->
+      <div class="viewport">
+        <div class="step-flow">
+          <ul>
+            <li class="current"><span class="step"><i class="n">1</i><span class="tx">Add Package Details</span></span>
+              <i class="icon-step-arrow-a"></i></li>
+            <li><span class="step"><i class="n">2</i><span class="tx">Add Reviewers</span></span>
+              <i class="icon-step-arrow"></i></li>
+            <li><span class="step"><i class="n">3</i><span class="tx"> Add Files</span></span>
+              <i class="icon-step-arrow"></i></li>
+            <li><span class="step"><i class="n">4</i><span class="tx">Add Distribution Options</span></span>
+              <i class="icon-step-arrow"></i></li>
+          </ul>
         </div>
+        <!-- /.step-flow -->
+
+        <div class="bar-pkg-config">
+          <div class="lt">
+            <label for="routingPackageTitle"><input type="text" id="routingPackageTitle" placeholder="Routing Package Title" title="Routing Package Title" class="tx-title text-ctrl" /></label>
+          </div>
+          <div class="rt">
+            <label class="select-wrap">
+              <select class="stylize">
+                <option>Routing Package Title</option>
+                <option>Routing Package</option>
+                <option>Routing Package 1</option>
+                <option>Routing Package 2</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <!-- /.bar-config -->
+
+        <div class="editor-section">
+          <h6><label for="editor">Comments</label></h6>
+
+          <div class="editor-wrap">
+            <textarea id="editor" title="Editor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis urna at justo condimentum accumsan. Etiam ac congue lorem. Integer a malesuada libero. In vel pharetra eros. Cum sociis na-toque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet erat tinci-dunt, eleifend eros non, semper lectus. Fusce sodales rutrum porttitor. Nullam pharetra quis dui vel elementum. Proin urna lorem, tempor a vehicula in, congue venenatis purus. Suspendisse congue tempor est, in rhoncus est luctus auctor. Fusce venenatis vel enim in viverra. Maecenas justo elit, consectetur nec convallis non, sodales feugiat ligula. Etiam tincidunt dui at lacus dignissim, vel luctus diam tristique. Ut eget volutpat nisi, ac interdum nisl. Suspendisse quis ex et massa placerat maximus. Proin diam quam, ornare id ultricies sed, ultrices id mi.</textarea>
+          </div>
+        </div>
+        <!-- /.editor-section -->
+
+        <footer class="bar-btn">
+          <div class="lt"></div>
+          <div class="rt">
+            <a href="routing-packages.html" class="btn">Save &amp; Exit</a>
+            <a href="routing-packages.html" class="btn">Save as Draft</a>
+            <a href="create-new-routing-package-add-reviewers.html" class="btn">Next</a>
+          </div>
+        </footer>
+        <!-- /.bar-btn -->
+
       </div>
-      <!-- /.editor-section -->
-
-      <footer class="bar-btn">
-        <div class="lt"></div>
-        <div class="rt">
-          <a href="routing-packages.html" class="btn">Save &amp; Exit</a>
-          <a href="routing-packages.html" class="btn">Save as Draft</a>
-          <a href="create-new-routing-package-add-reviewers.html" class="btn">Next</a>
-        </div>
-      </footer>
-      <!-- /.bar-btn -->
-
-    </div>
-    <!-- /.viewport -->
-  </main>
+      <!-- /.viewport -->
+    </main>
+  </div>
+  <!-- /.wrapper -->
 
   <!-- JavaScript -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>

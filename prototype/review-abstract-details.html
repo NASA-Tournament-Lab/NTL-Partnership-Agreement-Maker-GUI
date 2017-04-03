@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body data-json="db-routing-packages-details.json" class="has-header">
+<body data-json="db-perform-review.json" class="has-header submit-enabled">
   <aside class="mobile-aside hide">
     <div class="layer-bg"></div>
     <div class="navigation-menu">
@@ -73,8 +73,8 @@
       <div class="viewport">
         <ul>
           <li><a class="nav-lk" href="index.html">Home</a></li>
-          <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
-          <li><a class="nav-lk current">Routing Package Details</a></li>
+          <li><a class="nav-lk" href="my-reviews.html">My Reviews</a></li>
+          <li><a class="nav-lk current">Perform Review</a></li>
         </ul>
       </div>
     </nav>
@@ -82,17 +82,22 @@
     <main data-role="main" class="main">
       <div class="bar-page-title">
         <div class="viewport fx">
-          <h2 class="page-title has-icon"><i class="icon-list"></i>Routing Package Details</h2>
+          <h2 class="page-title has-icon"><i class="icon-list"></i>Perform Review</h2>
         </div>
       </div>
       <!-- /.bar-page-title -->
       <div class="viewport">
 
+        <div class="bar-rev-stat">
+          <div class="lt"><strong>Please review and concur within 3 business daysof receipt of this package.</strong></div>
+          <div class="rt">Review due in:<span class="time-left">2 Days 3 Hours</span></div>
+        </div>
+        <!-- /.bar-rev-stat -->
+
         <div class="table-container step-veiw has-spacing">
           <section class="table-section">
             <header class="head fx">
               <h6 class="table-title">Lorem Package Name</h6>
-              <a class="lk lk-edit" href="create-new-routing-package.html">Edit</a>
             </header>
             <table class="datatable datatable-routing datatable-pkd-name norm-bdr" data-repeaters="loremPkgName">
               <thead>
@@ -123,20 +128,11 @@
           </section>
           <!-- /.table-section datatable-pkd-details -->
 
-          <nav class="bar-tabnav">
-            <ul>
-              <li><a href="routing-package-details.html" class="on">Reviewers &amp; Files</a></li>
-              <li><a href="routing-package-details-distribution.html">Distribution Options</a></li>
-              <li><a href="routing-packages-complete-history.html">History</a></li>
-            </ul>
-          </nav>
-          <!-- /.bar-tabnav -->
-
-          <section class="table-section tablet-table-reviewers has-spacing-t-md">
+          <section class="table-section has-spacing-t-md">
             <header class="head fx">
-              <h6 class="table-title">Reviewers</h6>
+              <h6 class="table-title">Reviewers (in order of review)</h6>
             </header>
-            <div class="bar-action-lnks">
+            <div class="bar-action-lnks on-active spacing-t-sm">
               <div class="lt">
                 <a class="lk lk-add-reviewer modal-trigger" data-show-modal="add-reviewer-modal">Add Reviewer</a>
                 <a class="lk lk-add-routing-temp modal-trigger" data-show-modal="add-routing-template-modal">Add Routing Template</a>
@@ -158,60 +154,41 @@
                 </thead>
 
                 <tbody data-repeat="" class="template">
-                  <tr data-is-enabled="hasReviewerComments" data-class="concorrence">
+                  <tr data-is-enabled="hasReviewerComments">
                     <!-- Sequence -->
                     <td>
                       <div class="rw">
                         <span class="sno">1</span>
-                        <span class="movers"> <a class="move icon-move-d"></a><a class="move icon-move-u"></a> </span>
-                      </div>
-                      <div class="rw-ps" data-is-enabled="isEnabledPS">
-                        <label class="chk chk-lg rev">
-                          <input type="radio" data-group-name="ps" data-is-checked="isParallel" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">P</span>
-                        </label>
-                        <label class="chk chk-lg rev">
-                          <input type="radio" data-group-name="ps" data-is-checked="isSerial" class="chkctrl" /><i class="icon"></i><span class="tx">S</span>
-                        </label>
                       </div>
                     </td>
                     <!-- reviewer -->
                     <td>
-                      <div class="info-td">
+                      <div class="info-td fluid">
                         <h6 class="t" data-bind="reviewerName">Reviewer</h6>
                         <div class="comment-tx" data-bind="reviewerInfo"></div>
-                        <div class="rw-actions">
-                          <a class="lk lk-add-alt-approver modal-trigger" data-show-modal="add-alternate-reviewer-modal">Add Alternate Approver</a>
-                          <a class="lk lk-add-add-courtesy modal-trigger" data-show-modal="add-courtesy-copy-reviewer-modal">Add Courtesy Copy</a>
-                          <a class="lk lk-add-edit">Edit</a>
-                          <a class="lk lk-remove">Remove</a>
-                        </div>
                       </div>
                     </td>
                     <!-- concorrence -->
                     <td class="mobile-hide">
                       <span class="concurrence-status">
-                        <span data-bind="concorrence" data-class="concorrence" class="cs"></span>
-                      <a class="lk lk-remove-hold">Remove Hold</a>
+                        <span data-bind="concorrence" data-class="concorrence"></span>
                       </span>
                     </td>
                     <!-- email -->
                     <td class="mobile-hide">
-                      <div class="info-td info-email" data-class="emailStatusClass">
+                      <div class="info-td info-email fluid" data-class="emailStatusClass">
                         <div class="comment-tx email-stat" data-bind="emailStatus"></div>
-                        <div class="rw-actions"><a class="lk lk-edit-comment">Send Email</a></div>
                       </div>
                     </td>
                     <!-- Comments -->
                     <td class="tablet-hide">
-                      <div class="info-td">
+                      <div class="info-td  fluid">
                         <h6 class="t">Comments to Reviewer</h6>
                         <div class="comment-tx" data-bind="comments2Reviewer"></div>
                         <div class="rev-comments" data-is-enabled="hasReviewerComments">
                           <h6 class="t">Reviewer Comments</h6>
                           <div class="comment-tx fluid" data-bind="reviewerComments"></div>
                         </div>
-
-                        <div class="rw-actions"><a class="lk lk-edit-comment modal-trigger" data-show-modal="reviewer-comment-modal">Add Comment</a></div>
                       </div>
                     </td>
                   </tr>
@@ -222,7 +199,7 @@
                       <div class="rev-td">
                         <div class="col-type" data-bind="childType">ALT</div>
                         <div class="col-rev">
-                          <div class="info-td">
+                          <div class="info-td fluid">
                             <h6 class="t" data-bind="childReviewerName">Reviewer</h6>
                             <div class="comment-tx" data-bind="childReviewerInfo"></div>
                             <div class="rw-actions">
@@ -259,121 +236,15 @@
           </section>
           <!-- /.table-section Reviewers -->
 
-          <section class="table-section table-section-cc">
-            <header class="head text-center">
-              <h3 class="table-title title-cc">CC Reviewers</h3>
-            </header>
-            <div class="table-container">
-              <table class="datatable datatable-routing datatable-reviewers norm-bdr" data-repeaters="ccReviewers" data-callback="updateSequence">
-                <thead>
-                  <tr class="invisible">
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th class="mobile-hide"></th>
-                    <th class="tablet-hide"></th>
-                  </tr>
-                </thead>
-
-                <tbody data-repeat="" class="template">
-                  <tr>
-                    <!-- Sequence -->
-                    <td>
-                      <div class="rw">
-                        <span data-bind="type"></span>
-                      </div>
-                    </td>
-                    <!-- reviewer -->
-                    <td>
-                      <div class="info-td">
-                        <h6 class="t" data-bind="reviewerName">Reviewer</h6>
-                        <div class="comment-tx" data-bind="reviewerInfo"></div>
-                        <div class="rw-actions">
-                          <a class="lk lk-add-edit">Edit</a>
-                          <a class="lk lk-remove">Remove</a>
-                        </div>
-                      </div>
-                    </td>
-                    <!-- concorrence -->
-                    <td>
-                      <span class="concurrence-status">
-                        <span data-bind="concorrence" data-class="concorrence"></span>
-                      </span>
-                    </td>
-                    <!-- email -->
-                    <td class="mobile-hide">
-                      <div class="info-td info-email" data-class="emailStatusClass">
-                        <div class="comment-tx email-stat" data-bind="emailStatus"></div>
-                        <div class="rw-actions"><a class="lk lk-edit-comment">Send Email</a></div>
-                      </div>
-                    </td>
-                    <!-- Comments -->
-                    <td class="tablet-hide">
-                      <div class="info-td">
-                        <h6 class="t">Comments to Reviewer</h6>
-                        <div class="comment-tx" data-bind="comments2Reviewer"></div>
-                        <div class="rev-comments" data-is-enabled="hasReviewerComments">
-                          <h6 class="t">Reviewer Comments</h6>
-                          <div class="comment-tx fluid" data-bind="reviewerComments"></div>
-                        </div>
-
-                        <div class="rw-actions"><a class="lk lk-edit-comment modal-trigger" data-show-modal="reviewer-comment-modal">Add Comment</a></div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr data-class="hasChild" class="child-tr child-template">
-                    <td class="blank"></td>
-                    <!-- reviewer -->
-                    <td>
-                      <div class="rev-td">
-                        <div class="col-type" data-bind="childType">ALT</div>
-                        <div class="col-rev">
-                          <div class="info-td">
-                            <h6 class="t" data-bind="childReviewerName">Reviewer</h6>
-                            <div class="comment-tx" data-bind="childReviewerInfo"></div>
-                            <div class="rw-actions">
-                              <a class="lk lk-add-edit">Edit</a>
-                              <a class="lk lk-remove-child">Remove</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-auto">
-                          <div class="rw-actions">
-                            <label class="chk  chk-md">
-                              <input type="checkbox" class="chkctrl" data-is-checked="childIsAuto" /><i class="icon"></i><span class="tx"><span data-bind="status-text">Auto</span>
-                              <a class="que icon-help-sm"></a>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /.rev-td -->
-                    </td>
-
-                    <!-- file upload access -->
-                    <td></td>
-                    <!-- Email -->
-                    <td></td>
-                    <!-- Comments -->
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- /.datatable -->
-            </div>
-            <!-- /.table-container -->
-          </section>
-          <!-- /.table-section Reviewers -->
-
           <section class="table-section has-spacing-t-md">
             <header class="head fx">
-              <h6 class="table-title">Files</h6>
+              <h6 class="table-title">Distribtion Options</h6>
             </header>
-            <div class="rw-add-file">
+            <div class="rev-reminder">Mary Meador, Please review the information below, make comments and give your concurrence. Thank you.</div>
+            <h5 class="to-review">Files to Review</h5>
+            <div class="rw-add-file spacing-t-sm">
+
               <a class="lk">Add File</a>
-              <label class="chk chk-md">
-                <input type="checkbox" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">Include draft versions of agreements and summary dynamically generated from PAM</span>
-              </label>
             </div>
             <table class="datatable datatable-routing datatable-dist datatable-files norm-bdr" data-repeaters="files">
               <thead>
@@ -388,7 +259,6 @@
                     <a class="lk" data-bind="file" href="data/Filename.pdf.temp" target="_blank"></a>
                     <div class="rw-actions" data-is-enabled="hasAddRemove">
                       <a class="lk modal-trigger btn-add-revision" data-show-modal="add-file-revision-modal">Add Revision</a>
-                      <a class="lk">Remove</a>
                     </div>
                   </td>
                   <td> <span data-bind="description"></span> </td>
@@ -396,8 +266,70 @@
               </tbody>
             </table>
             <!-- /.datatable -->
+
+            <div class="comments-area">
+              <h5 class="to-review"><label for="reviewComment">Please enter any comments you have about this agreement </label></h5>
+              <div class="val">
+                <textarea id="reviewComment" title="Review Comment" class="ta-comment">Lorem Ipsum Text</textarea>
+                <div class="approve-msgs off-submit">
+                  <div class="rw"><i class="r"></i>I do not concur/approve</div>
+                  <div class="rw"><i class="g"></i>I concur/approve</div>
+                </div>
+                <!-- /.approve-msgs -->
+              </div>
+            </div>
+            <!-- /.comments-area -->
+
+            <div class="proceed-section on-submit">
+              <div class="proceed-gr">
+                <div class="rw-pro">
+                  <label class="chk  chk-lg">
+                    <input type="radio" name="procced-opt" checked="checked" class="chkctrl" />
+                    <i class="icon"></i>
+                    <span class="text g">OK TO PROCEED</span>
+                  </label>
+                </div>
+                <div class="info">This will complete the abstract review or if more review levels are beyond this point, this level will be completed.</div>
+              </div>
+              <!-- /.proceed-gr -->
+              <div class="proceed-gr">
+                <div class="rw-pro">
+                  <label class="chk  chk-lg">
+                    <input type="radio" name="procced-opt" class="chkctrl" />
+                    <i class="icon"></i>
+                    <span class="text y">DO NOT PROCEED</span>
+                  </label>
+                </div>
+                <div class="info">This review iteration will require the abstract to be returned back to the center/HQ office with a "DO NOT proceed". (By default the "submitter" will be added to the end of this review package and then the HQ Partnership Office will be added after to confirm any changes to the abstract as the review continues). If a review will be done by a person other than the submitter for this package, the "Add Reviewer" button need to be used to manually add the new reviewer.</div>
+              </div>
+              <!-- /.proceed-gr -->
+              <div class="proceed-gr">
+                <div class="rw-pro">
+                  <label class="chk  chk-lg">
+                    <input type="radio" name="procced-opt" class="chkctrl" />
+                    <i class="icon"></i>
+                    <span class="text r">FINAL DO NOT PROCEED</span>
+                  </label>
+                </div>
+                <div class="info">The NASA PO is issuing a "Final DO NOt Proceed' to close this record. If the initiating office is able to resolve the concerns described above, then they are requested to re-submit a new abstract. (This selection is rarely used.)</div>
+              </div>
+              <!-- /.proceed-gr -->
+            </div>
           </section>
           <!-- /.table-section -->
+          <footer class="bar-btn spacing-md">
+            <div class="lt"></div>
+            <div class="rt">
+              <a href="my-reviews.html" class="btn btn-secondary">Cancel</a>
+              <div class="off-submit">
+                <a class="btn btn-md modal-trigger" data-show-modal="approve-agreement-confirm-modal">I do Not Concur/Approve</a>
+                <a class="btn btn-md modal-trigger" data-show-modal="approve-agreement-confirm-modal">I Concur/Approve</a>
+              </div>
+              <div class="on-submit">
+                <a class="btn btn-md modal-trigger" data-show-modal="approve-agreement-confirm-modal">Submit Review</a>
+              </div>
+            </div>
+          </footer>
         </div>
         <!-- /.table-container -->
 
@@ -405,8 +337,26 @@
       <!-- /.viewport -->
     </main>
   </div>
+  <!-- /.wrapper -->
 
-  <!--modal -->
+  <!-- modal -->
+  
+
+  <div id="approve-agreement-confirm-modal" class="modal confirm-modal">
+    <a class="icon-close close-modal"></a>
+    <div class="modal-header">
+      <h2>Message</h2>
+    </div>
+    <div class="modal-body">
+      <div class="message">Are you sure you concur/approve? </div>
+    </div>
+    <div class="modal-footer">
+      <a class="button close-modal">No</a>
+      <a class="button primary" href="review-closed-questionnare.html">Yes</a>
+    </div>
+  </div>
+  <!-- /#approve-agreement-confirm-modal.modal -->
+
   <div id="add-file-revision-modal" class="modal add-file-revision">
     <a class="icon-close close-modal"></a>
     <div class="modal-header">
@@ -464,8 +414,8 @@
         </div>
       </div>
       <div class="description-section clearfix">
-        <h4><label for="description">Description</label></h4>
-        <textarea id="description" title="Description"></textarea>
+        <h4><label data-add-index="for" for="description">Description</label></h4>
+        <textarea data-add-index="id" id="description" title="Description"></textarea>
       </div>
     </div>
     <div class="modal-footer">
@@ -524,28 +474,28 @@
         <div class="inputs">
           <div class="rw">
             <div class="input-group">
-              <label for="firstName-ma-rev">First Name</label>
-              <input type="text" id="firstName-ma-rev">
+              <label for="firstName-mar">First Name</label>
+              <input type="text" id="firstName-mar">
             </div>
             <div class="input-group">
-              <label for="lastName-ma-rev">Last Name</label>
-              <input type="text" id="lastName-ma-rev">
-            </div>
-          </div>
-          <div class="rw">
-            <div class="input-group">
-              <label for="title">Title</label>
-              <input type="text" id="title">
-            </div>
-            <div class="input-group">
-              <label for="email-ma-rev">Email</label>
-              <input type="text" id="email-ma-rev">
+              <label for="lastName-mar">Last Name</label>
+              <input type="text" id="lastName-mar">
             </div>
           </div>
           <div class="rw">
             <div class="input-group">
-              <label for="phoneNumber-ma-rev">Phone Number</label>
-              <input type="text" id="phoneNumber-ma-rev">
+              <label for="title-mar">Title</label>
+              <input type="text" id="title-mar">
+            </div>
+            <div class="input-group">
+              <label for="email-mar">Email</label>
+              <input type="text" id="email-mar">
+            </div>
+          </div>
+          <div class="rw">
+            <div class="input-group">
+              <label for="phoneNumber-mar">Phone Number</label>
+              <input type="text" id="phoneNumber-mar">
             </div>
           </div>
         </div>
@@ -566,8 +516,8 @@
               </label>
             </li>
             <li class="clearfix">
-              <label class="chk  chk-lg">
-                <input type="checkbox" class="chkctrl" />
+              <label class="chk  chk-lg" for="uploadAccess">
+                <input type="checkbox" id="uploadAccess" title="Upload Access" class="chkctrl" />
                 <i class="icon"></i>
                 <span class="text">Reviewer File Upload Access<a class="icon-help"></a></span>
               </label>
@@ -596,20 +546,20 @@
       <div class="search-reviewer clearfix">
         <div class="inputs">
           <div class="input-group">
-            <label for="firstName-add-alt">First Name</label>
-            <input type="text" id="firstName-add-alt">
+            <label for="firstName-alt-add">First Name</label>
+            <input type="text" id="firstName-alt-add">
           </div>
           <div class="input-group">
-            <label for="center-add-alt">Center</label>
-            <select class="stylize" id="center-add-alt">
+            <label for="center-alt-add">Center</label>
+            <select class="stylize" id="center-alt-add">
               <option value="GRC">GRC</option>
               <option value="Lorem">Lorem</option>
               <option value="Ipsum">Ipsum</option>
             </select>
           </div>
           <div class="input-group">
-            <label for="lastName-add-alt">Last Name</label>
-            <input type="text" id="lastName-add-alt">
+            <label for="lastName-alt-add">Last Name</label>
+            <input type="text" id="lastName-alt-add">
           </div>
         </div>
         <div class="buttons">
@@ -636,28 +586,28 @@
         <div class="inputs">
           <div class="rw">
             <div class="input-group">
-              <label for="firstName-man-add">First Name</label>
-              <input type="text" id="firstName-man-add">
+              <label for="firstName-m-add">First Name</label>
+              <input type="text" id="firstName-m-add">
             </div>
             <div class="input-group">
-              <label for="lastName-man-add">Last Name</label>
-              <input type="text" id="lastName-man-add">
-            </div>
-          </div>
-          <div class="rw">
-            <div class="input-group">
-              <label for="title-man-add">Title</label>
-              <input type="text" id="title-man-add">
-            </div>
-            <div class="input-group">
-              <label for="email-man-add">Email</label>
-              <input type="text" id="email-man-add">
+              <label for="lastName-m-add">Last Name</label>
+              <input type="text" id="lastName-m-add">
             </div>
           </div>
           <div class="rw">
             <div class="input-group">
-              <label for="phoneNumber-man-add">Phone Number</label>
-              <input type="text" id="phoneNumber-man-add">
+              <label for="title-m-add">Title</label>
+              <input type="text" id="title-m-add">
+            </div>
+            <div class="input-group">
+              <label for="email-m-add">Email</label>
+              <input type="text" id="email-m-add">
+            </div>
+          </div>
+          <div class="rw">
+            <div class="input-group">
+              <label for="phoneNumber-m-add">Phone Number</label>
+              <input type="text" id="phoneNumber-m-add">
             </div>
           </div>
         </div>
@@ -716,20 +666,20 @@
       <div class="search-reviewer clearfix">
         <div class="inputs">
           <div class="input-group">
-            <label for="firstName-add-cour">First Name</label>
-            <input type="text" id="firstName-add-cour">
+            <label for="firstName-add-cour-copy">First Name</label>
+            <input type="text" id="firstName-add-cour-copy">
           </div>
           <div class="input-group">
-            <label for="center-add-cour">Center</label>
-            <select class="stylize" id="center-add-cour">
+            <label for="center-add-cour-copy">Center</label>
+            <select class="stylize" id="center-add-cour-copy">
               <option value="GRC">GRC</option>
               <option value="Lorem">Lorem</option>
               <option value="Ipsum">Ipsum</option>
             </select>
           </div>
           <div class="input-group">
-            <label for="lastName-add-cour">Last Name</label>
-            <input type="text" id="lastName-add-cour">
+            <label for="lastName-add-cour-copy">Last Name</label>
+            <input type="text" id="lastName-add-cour-copy">
           </div>
         </div>
         <div class="buttons">
@@ -756,28 +706,28 @@
         <div class="inputs">
           <div class="rw">
             <div class="input-group">
-              <label for="firstName-manual">First Name</label>
-              <input type="text" id="firstName-manual">
+              <label for="firstName-ma-rev">First Name</label>
+              <input type="text" id="firstName-ma-rev">
             </div>
             <div class="input-group">
-              <label for="lastName-manual">Last Name</label>
-              <input type="text" id="lastName-manual">
-            </div>
-          </div>
-          <div class="rw">
-            <div class="input-group">
-              <label for="title-manual">Title</label>
-              <input type="text" id="title-manual">
-            </div>
-            <div class="input-group">
-              <label for="email-manual">Email</label>
-              <input type="text" id="email-manual">
+              <label for="lastName-ma-rev">Last Name</label>
+              <input type="text" id="lastName-ma-rev">
             </div>
           </div>
           <div class="rw">
             <div class="input-group">
-              <label for="phoneNumber-manual">Phone Number</label>
-              <input type="text" id="phoneNumber-manual">
+              <label for="title-ma-rev">Title</label>
+              <input type="text" id="title-ma-rev">
+            </div>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="text" id="email">
+            </div>
+          </div>
+          <div class="rw">
+            <div class="input-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="text" id="phoneNumber">
             </div>
           </div>
         </div>
@@ -954,10 +904,8 @@
     </div>
   </div>
   <!-- /#add-routing-template-modal.modal -->
-
   <div class="modal-overlay"></div>
-  <!-- /.modal-overlay -->
-  <!--modal-end -->
+  <!-- modal-end -->
   <!-- JavaScript -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>

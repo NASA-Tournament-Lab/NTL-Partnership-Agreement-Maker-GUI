@@ -15,12 +15,11 @@
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/sprite.css" />
-  <link rel="stylesheet" href="css/editor.css" />
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body data-json="db-create-routings.json" class="has-header">
+<body class="has-header" data-json="db-create-routings.json">
   <aside class="mobile-aside hide">
     <div class="layer-bg"></div>
     <div class="navigation-menu">
@@ -73,8 +72,8 @@
       <div class="viewport">
         <ul>
           <li><a class="nav-lk" href="index.html">Home</a></li>
-          <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
-          <li><a class="nav-lk current">Create New Routing Package</a></li>
+          <li><a class="nav-lk" href="routing-templates.html">Routing Templates</a></li>
+          <li><a class="nav-lk current">Create New Routing Template</a></li>
         </ul>
       </div>
     </nav>
@@ -82,44 +81,30 @@
     <main data-role="main" class="main">
       <div class="bar-page-title">
         <div class="viewport fx">
-          <h2 class="page-title has-icon"><i class="icon-list"></i>Create New Routing Package</h2>
+          <h2 class="page-title has-icon"><i class="icon-list"></i>Edit Routing Template</h2>
         </div>
       </div>
       <!-- /.bar-page-title -->
+
       <div class="viewport">
-        <div class="step-flow">
-          <ul>
-            <li class="completed"><span class="step"><i class="n">1</i><span class="tx">Add Package Details</span></span>
-              <i class="icon-step-arrow"></i></li>
-            <li class="current"><span class="step"><i class="n">2</i><span class="tx">Add Reviewers</span></span>
-              <i class="icon-step-arrow-a"></i></li>
-            <li><span class="step"><i class="n">3</i><span class="tx"> Add Files</span></span>
-              <i class="icon-step-arrow"></i></li>
-            <li><span class="step"><i class="n">4</i><span class="tx">Add Distribution Options</span></span>
-              <i class="icon-step-arrow"></i></li>
-          </ul>
-        </div>
-        <!-- /.step-flow -->
-
-        <section class="design-comment at-top">
-          <h5>GSFC Routing Requirement:</h5>
-          <div class="summary">It is a requirement to use a "Center Level" routing template before starting this routing for concurrence. To do this click on the "Add Routing Template" link and select the appropriate Center Level Template
+        <div class="bar-pkg-config">
+          <div class="lt">
+            <label for="templateName"><input type="text" id="templateName" placeholder="Template Name" title="Template Name" class="tx-title text-ctrl" value="Lorem Template Name"></label>
           </div>
-        </section>
-        <!-- /.design-comment -->
-
+          <div class="rt">
+            <label class="chk chk-lg">
+              <input type="checkbox" class="chkctrl" data-is-checked="isDistFile" checked="checked"><i class="icon"></i><span class="tx">Group Level Template</span>
+            </label>
+          </div>
+        </div>
         <div class="bar-action-lnks">
           <div class="lt">
             <a class="lk lk-add-reviewer modal-trigger" data-show-modal="add-reviewer-modal">Add Reviewer</a>
-            <a class="lk lk-add-routing-temp modal-trigger" data-show-modal="add-routing-template-modal">Add Routing Template</a>
-          </div>
-          <div class="rt">
-            <a class="lk lk-save-temp">Save as Template</a>
           </div>
         </div>
-        <!-- /.bar-action-lnks -->
+        <!--  modal -->
 
-        <div class="table-container datatable-routing-container has-spacing no-data">
+        <div class="table-container datatable-routing-container has-spacing">
           <table class="datatable datatable-routing" data-repeaters="routings" data-callback="updateSequence">
             <thead>
               <tr>
@@ -225,23 +210,20 @@
 
         <footer class="bar-btn">
           <div class="lt">
-            <a href="create-new-routing-package.html" class="btn">Previous</a>
           </div>
           <div class="rt">
-            <a href="routing-packages.html" class="btn">Save &amp; Exit</a>
-            <a href="routing-packages.html" class="btn">Save as Draft</a>
-            <a href="create-new-routing-package-add-files.html" class="btn">Next</a>
+            <a href="routing-templates.html" class="btn btn-secondary">Cancel</a>
+            <a class="btn">Save as Draft</a>
+            <a href="routing-templates-my-templates.html" class="btn">Save</a>
           </div>
         </footer>
-        <!-- /.bar-btn -->
-
       </div>
       <!-- /.viewport -->
     </main>
   </div>
   <!-- /.wrapper -->
 
-  <!-- modals -->
+  <!--modal -->
   <div id="add-reviewer-modal" class="modal add-reviewer">
     <a class="icon-close close-modal"></a>
     <div class="modal-header">
@@ -724,7 +706,7 @@
 
   <div class="modal-overlay"></div>
   <!-- /.modal-overlay -->
-  <!-- modals-end -->
+
   <!-- JavaScript -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>

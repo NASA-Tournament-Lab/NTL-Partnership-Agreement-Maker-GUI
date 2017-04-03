@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <title>NASA PAM</title>
@@ -20,82 +20,109 @@
 </head>
 
 <body class="has-header" data-json="db-my-review.json">
-  <header class="main-head">
-    <div class="viewport">
-      <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
-      <h1 class="main-title">Partnership Agreement Maker</h1>
-      <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
-        <img class="thumb" src="i/user.png" alt="" />
-        </span>
-        <a class="caret icon-caret"></a>
-      </div>
-    </div>
-  </header>
-  <!-- /.main-head -->
-  <nav class="main-nav">
-    <div class="viewport">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="routing-packages.html">Routing Packages</a></li>
-        <li><a href="routing-templates.html">Routing Templates</a></li>
-        <li class="active"><a href="my-reviews.html">My Reviews</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /.main-nav -->
-  <main data-role="main" class="main">
-    <div class="bar-page-title">
-      <div class="viewport fx">
-        <h2 class="page-title has-icon"><i class="icon-list"></i>My Reviews</h2>
-      </div>
-    </div>
-    <!-- /.bar-page-title -->
-    <div class="viewport">
-      <nav class="bar-tabnav">
-        <ul>
-          <li><a href="my-reviews.html">Open Reviews</a></li>
-          <li><a href="my-reviews-completed.html" class="on">Completed Reviews</a></li>
-        </ul>
-
-        <div class="rt">
-          <div class="select-wrap select-group">
-            <select class="stylize">
-              <option>Group: All Group</option>
-              <option>Group: All Group 2</option>
-              <option>Group: All Group 3</option>
-            </select>
-          </div>
+  <aside class="mobile-aside hide">
+    <div class="layer-bg"></div>
+    <div class="navigation-menu">
+      <div class="top-box">
+        <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+            libDest
+            </span>
+          <a class="caret icon-caret"></a>
         </div>
-      </nav>
-      <!-- /.bar-tabnav -->
-      <div class="table-container has-spacing">
-        <table class="datatable table-review">
-          <thead>
-            <tr>
-              <th><span>Routing Package</span></th>
-              <th><span>Routing Group</span></th>
-              <th><span>Assigned on</span></th>
-              <th><span>Due in</span></th>
-              <th><span>Adminstered by</span></th>
-            </tr>
-          </thead>
-          <tbody data-repeaters="completed">
-            <tr class="template" data-repeat="">
-              <td data-bind="packageName"></td>
-              <td data-bind="routingGroup"></td>
-              <td data-bind="assignedOn"></td>
-              <td data-bind="dueIn" data-class="dueStatus"></td>
-              <td data-bind="adminsteredBy"></td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- /.datatable -->
       </div>
-      <!-- /.table-container -->
-
+      <!-- end .menu-white -->
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="routing-packages.html">Routing Packages</a></li>
+          <li><a href="routing-templates.html">Routing Templates</a></li>
+          <li class="active"><a href="my-reviews.html">My Reviews</a></li>
+        </ul>
+      </nav>
+      <!-- end .nav -->
     </div>
-    <!-- /.viewport -->
-  </main>
+  </aside>
+  <!-- end .mobile-aside -->
+  <div class="wrapper">
+    <header class="main-head">
+      <div class="viewport">
+        <h1 class="logo"><a href="index.html" class="icon-nasa-logo">NASA</a></h1>
+        <h1 class="main-title">Partnership Agreement Maker</h1>
+        <a href="javascript:;" class="btn-icon-menu"></a>
+        <div class="welcome"><span class="greet">Welcome,</span> <span class="user"><span class="name">Username</span>
+          libDest
+          </span>
+          <a class="caret icon-caret"></a>
+        </div>
+      </div>
+    </header>
+    <!-- /.main-head -->
+    <nav class="main-nav">
+      <div class="viewport">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="routing-packages.html">Routing Packages</a></li>
+          <li><a href="routing-templates.html">Routing Templates</a></li>
+          <li class="active"><a href="my-reviews.html">My Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /.main-nav -->
+    <main data-role="main" class="main">
+      <div class="bar-page-title">
+        <div class="viewport fx">
+          <h2 class="page-title has-icon"><i class="icon-list"></i>My Reviews</h2>
+        </div>
+      </div>
+      <!-- /.bar-page-title -->
+      <div class="viewport">
+        <nav class="bar-tabnav">
+          <ul>
+            <li><a href="my-reviews.html">Open Reviews</a></li>
+            <li><a href="my-reviews-completed.html" class="on">Completed Reviews</a></li>
+          </ul>
+
+          <div class="rt">
+            <div class="select-wrap select-group">
+              <label for="groupSelector"><select id="groupSelector" title="Group Selector" class="stylize">
+                <option>Group: All Group</option>
+                <option>Group: All Group 2</option>
+                <option>Group: All Group 3</option>
+              </select></label>
+            </div>
+          </div>
+        </nav>
+        <!-- /.bar-tabnav -->
+        <div class="table-container has-spacing">
+          <table class="datatable table-review">
+            <thead>
+              <tr>
+                <th><span>Routing Package</span></th>
+                <th><span>Routing Group</span></th>
+                <th><span>Assigned on</span></th>
+                <th><span>Due in</span></th>
+                <th class="mobile-hide"><span>Adminstered by</span></th>
+              </tr>
+            </thead>
+            <tbody data-repeaters="completed">
+              <tr class="template" data-repeat="">
+                <td data-bind="packageName"></td>
+                <td data-bind="routingGroup"></td>
+                <td data-bind="assignedOn"></td>
+                <td data-bind="dueIn" data-class="dueStatus"></td>
+                <td class="mobile-hide" data-bind="adminsteredBy"></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- /.datatable -->
+        </div>
+        <!-- /.table-container -->
+
+      </div>
+      <!-- /.viewport -->
+    </main>
+  </div>
+  <!-- /.wrapper -->
 
   <!-- JavaScript -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>

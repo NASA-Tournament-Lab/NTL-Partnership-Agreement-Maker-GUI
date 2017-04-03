@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body data-json="db-routing-packages-details.json" class="has-header">
+<body data-json="db-perform-review.json" class="has-header">
   <aside class="mobile-aside hide">
     <div class="layer-bg"></div>
     <div class="navigation-menu">
@@ -73,8 +73,8 @@
       <div class="viewport">
         <ul>
           <li><a class="nav-lk" href="index.html">Home</a></li>
-          <li><a class="nav-lk" href="routing-packages.html">Routing Packages</a></li>
-          <li><a class="nav-lk current">Routing Package Details</a></li>
+          <li><a class="nav-lk" href="my-reviews.html">My Reviews</a></li>
+          <li><a class="nav-lk current">Review Closed Questionnare</a></li>
         </ul>
       </div>
     </nav>
@@ -82,17 +82,22 @@
     <main data-role="main" class="main">
       <div class="bar-page-title">
         <div class="viewport fx">
-          <h2 class="page-title has-icon"><i class="icon-list"></i>Routing Package Details</h2>
+          <h2 class="page-title has-icon"><i class="icon-list"></i>Review Closed Questionnare</h2>
         </div>
       </div>
       <!-- /.bar-page-title -->
       <div class="viewport">
 
+        <div class="bar-rev-stat">
+          <div class="lt"><strong>Please review and concur within 3 business daysof receipt of this package.</strong></div>
+          <div class="rt">Review due in:<span class="time-left">2 Days 3 Hours</span></div>
+        </div>
+        <!-- /.bar-rev-stat -->
+
         <div class="table-container step-veiw has-spacing">
           <section class="table-section">
             <header class="head fx">
               <h6 class="table-title">Lorem Package Name</h6>
-              <a class="lk lk-edit" href="create-new-routing-package.html">Edit</a>
             </header>
             <table class="datatable datatable-routing datatable-pkd-name norm-bdr" data-repeaters="loremPkgName">
               <thead>
@@ -123,20 +128,11 @@
           </section>
           <!-- /.table-section datatable-pkd-details -->
 
-          <nav class="bar-tabnav">
-            <ul>
-              <li><a href="routing-package-details.html" class="on">Reviewers &amp; Files</a></li>
-              <li><a href="routing-package-details-distribution.html">Distribution Options</a></li>
-              <li><a href="routing-packages-complete-history.html">History</a></li>
-            </ul>
-          </nav>
-          <!-- /.bar-tabnav -->
-
-          <section class="table-section tablet-table-reviewers has-spacing-t-md">
+          <section class="table-section has-spacing-t-md">
             <header class="head fx">
-              <h6 class="table-title">Reviewers</h6>
+              <h6 class="table-title">Reviewers (in order of review)</h6>
             </header>
-            <div class="bar-action-lnks">
+            <div class="bar-action-lnks on-active spacing-t-sm">
               <div class="lt">
                 <a class="lk lk-add-reviewer modal-trigger" data-show-modal="add-reviewer-modal">Add Reviewer</a>
                 <a class="lk lk-add-routing-temp modal-trigger" data-show-modal="add-routing-template-modal">Add Routing Template</a>
@@ -158,60 +154,41 @@
                 </thead>
 
                 <tbody data-repeat="" class="template">
-                  <tr data-is-enabled="hasReviewerComments" data-class="concorrence">
+                  <tr data-is-enabled="hasReviewerComments">
                     <!-- Sequence -->
                     <td>
                       <div class="rw">
                         <span class="sno">1</span>
-                        <span class="movers"> <a class="move icon-move-d"></a><a class="move icon-move-u"></a> </span>
-                      </div>
-                      <div class="rw-ps" data-is-enabled="isEnabledPS">
-                        <label class="chk chk-lg rev">
-                          <input type="radio" data-group-name="ps" data-is-checked="isParallel" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">P</span>
-                        </label>
-                        <label class="chk chk-lg rev">
-                          <input type="radio" data-group-name="ps" data-is-checked="isSerial" class="chkctrl" /><i class="icon"></i><span class="tx">S</span>
-                        </label>
                       </div>
                     </td>
                     <!-- reviewer -->
                     <td>
-                      <div class="info-td">
+                      <div class="info-td fluid">
                         <h6 class="t" data-bind="reviewerName">Reviewer</h6>
                         <div class="comment-tx" data-bind="reviewerInfo"></div>
-                        <div class="rw-actions">
-                          <a class="lk lk-add-alt-approver modal-trigger" data-show-modal="add-alternate-reviewer-modal">Add Alternate Approver</a>
-                          <a class="lk lk-add-add-courtesy modal-trigger" data-show-modal="add-courtesy-copy-reviewer-modal">Add Courtesy Copy</a>
-                          <a class="lk lk-add-edit">Edit</a>
-                          <a class="lk lk-remove">Remove</a>
-                        </div>
                       </div>
                     </td>
                     <!-- concorrence -->
                     <td class="mobile-hide">
                       <span class="concurrence-status">
-                        <span data-bind="concorrence" data-class="concorrence" class="cs"></span>
-                      <a class="lk lk-remove-hold">Remove Hold</a>
+                        <span data-bind="concorrence" data-class="concorrence"></span>
                       </span>
                     </td>
                     <!-- email -->
                     <td class="mobile-hide">
-                      <div class="info-td info-email" data-class="emailStatusClass">
+                      <div class="info-td info-email fluid" data-class="emailStatusClass">
                         <div class="comment-tx email-stat" data-bind="emailStatus"></div>
-                        <div class="rw-actions"><a class="lk lk-edit-comment">Send Email</a></div>
                       </div>
                     </td>
                     <!-- Comments -->
                     <td class="tablet-hide">
-                      <div class="info-td">
+                      <div class="info-td  fluid">
                         <h6 class="t">Comments to Reviewer</h6>
                         <div class="comment-tx" data-bind="comments2Reviewer"></div>
                         <div class="rev-comments" data-is-enabled="hasReviewerComments">
                           <h6 class="t">Reviewer Comments</h6>
                           <div class="comment-tx fluid" data-bind="reviewerComments"></div>
                         </div>
-
-                        <div class="rw-actions"><a class="lk lk-edit-comment modal-trigger" data-show-modal="reviewer-comment-modal">Add Comment</a></div>
                       </div>
                     </td>
                   </tr>
@@ -222,7 +199,7 @@
                       <div class="rev-td">
                         <div class="col-type" data-bind="childType">ALT</div>
                         <div class="col-rev">
-                          <div class="info-td">
+                          <div class="info-td fluid">
                             <h6 class="t" data-bind="childReviewerName">Reviewer</h6>
                             <div class="comment-tx" data-bind="childReviewerInfo"></div>
                             <div class="rw-actions">
@@ -259,154 +236,424 @@
           </section>
           <!-- /.table-section Reviewers -->
 
-          <section class="table-section table-section-cc">
-            <header class="head text-center">
-              <h3 class="table-title title-cc">CC Reviewers</h3>
-            </header>
-            <div class="table-container">
-              <table class="datatable datatable-routing datatable-reviewers norm-bdr" data-repeaters="ccReviewers" data-callback="updateSequence">
-                <thead>
-                  <tr class="invisible">
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th class="mobile-hide"></th>
-                    <th class="tablet-hide"></th>
-                  </tr>
-                </thead>
-
-                <tbody data-repeat="" class="template">
-                  <tr>
-                    <!-- Sequence -->
-                    <td>
-                      <div class="rw">
-                        <span data-bind="type"></span>
-                      </div>
-                    </td>
-                    <!-- reviewer -->
-                    <td>
-                      <div class="info-td">
-                        <h6 class="t" data-bind="reviewerName">Reviewer</h6>
-                        <div class="comment-tx" data-bind="reviewerInfo"></div>
-                        <div class="rw-actions">
-                          <a class="lk lk-add-edit">Edit</a>
-                          <a class="lk lk-remove">Remove</a>
-                        </div>
-                      </div>
-                    </td>
-                    <!-- concorrence -->
-                    <td>
-                      <span class="concurrence-status">
-                        <span data-bind="concorrence" data-class="concorrence"></span>
-                      </span>
-                    </td>
-                    <!-- email -->
-                    <td class="mobile-hide">
-                      <div class="info-td info-email" data-class="emailStatusClass">
-                        <div class="comment-tx email-stat" data-bind="emailStatus"></div>
-                        <div class="rw-actions"><a class="lk lk-edit-comment">Send Email</a></div>
-                      </div>
-                    </td>
-                    <!-- Comments -->
-                    <td class="tablet-hide">
-                      <div class="info-td">
-                        <h6 class="t">Comments to Reviewer</h6>
-                        <div class="comment-tx" data-bind="comments2Reviewer"></div>
-                        <div class="rev-comments" data-is-enabled="hasReviewerComments">
-                          <h6 class="t">Reviewer Comments</h6>
-                          <div class="comment-tx fluid" data-bind="reviewerComments"></div>
-                        </div>
-
-                        <div class="rw-actions"><a class="lk lk-edit-comment modal-trigger" data-show-modal="reviewer-comment-modal">Add Comment</a></div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr data-class="hasChild" class="child-tr child-template">
-                    <td class="blank"></td>
-                    <!-- reviewer -->
-                    <td>
-                      <div class="rev-td">
-                        <div class="col-type" data-bind="childType">ALT</div>
-                        <div class="col-rev">
-                          <div class="info-td">
-                            <h6 class="t" data-bind="childReviewerName">Reviewer</h6>
-                            <div class="comment-tx" data-bind="childReviewerInfo"></div>
-                            <div class="rw-actions">
-                              <a class="lk lk-add-edit">Edit</a>
-                              <a class="lk lk-remove-child">Remove</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-auto">
-                          <div class="rw-actions">
-                            <label class="chk  chk-md">
-                              <input type="checkbox" class="chkctrl" data-is-checked="childIsAuto" /><i class="icon"></i><span class="tx"><span data-bind="status-text">Auto</span>
-                              <a class="que icon-help-sm"></a>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /.rev-td -->
-                    </td>
-
-                    <!-- file upload access -->
-                    <td></td>
-                    <!-- Email -->
-                    <td></td>
-                    <!-- Comments -->
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- /.datatable -->
-            </div>
-            <!-- /.table-container -->
-          </section>
-          <!-- /.table-section Reviewers -->
-
           <section class="table-section has-spacing-t-md">
             <header class="head fx">
-              <h6 class="table-title">Files</h6>
+              <h6 class="table-title blue-title">Agreement Close-Out Questionnaire</h6>
             </header>
-            <div class="rw-add-file">
-              <a class="lk">Add File</a>
-              <label class="chk chk-md">
-                <input type="checkbox" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">Include draft versions of agreements and summary dynamically generated from PAM</span>
-              </label>
+            <div class="row-questionnare-txt red-text">
+              <div class="rev-reminder">
+                Before answering the questions, please review the "Purpose and General Scope" section below.
+                To view the entire agreement click the <a href="https://pam.nasa.gov/ldap_web/downloadfile.aspx?Id=59947&type=saam" class="blue-link">View Signed Agreement</a> link.
+              </div>
             </div>
-            <table class="datatable datatable-routing datatable-dist datatable-files norm-bdr" data-repeaters="files">
-              <thead>
-                <tr>
-                  <th><span>File</span></th>
-                  <th><span>Description</span> </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-repeat="" class="template">
-                  <td>
-                    <a class="lk" data-bind="file" href="data/Filename.pdf.temp" target="_blank"></a>
-                    <div class="rw-actions" data-is-enabled="hasAddRemove">
-                      <a class="lk modal-trigger btn-add-revision" data-show-modal="add-file-revision-modal">Add Revision</a>
-                      <a class="lk">Remove</a>
-                    </div>
-                  </td>
-                  <td> <span data-bind="description"></span> </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- /.datatable -->
+            <!-- /.row-questionnare-txt -->
+            <div class="row-questionnare-txt red-text">
+              <h5 class="to-review italic-underline-font-style">All answers are required.</h5>
+              <div class="rev-reminder">
+                Upon completion a submit button will appear at the end of the questionnaire. Click this
+                button to forward your response to the agreement manager.
+              </div>
+              <div class="rev-reminder">
+                If you need to leave before completing the questionnaire please click the "Save" button below.
+                To return click the link provided in the initial email you recieved or contact the agreement
+                manager listed above.
+              </div>
+            </div>
+            <!-- /.row-questionnare-txt -->
+            <div class="row-questionnare-txt">
+              <h5 class="to-review">Purpose and General Scope of agreement</h5>
+              <div class="rev-reminder">
+                This Nonreimbursable Space Act Agreement ’shall be for the purpose of collaborative research to
+                study attentional tunneling, otherwise known as attentional cognitive fixation. This is a well-known
+                human factors safety problem in the context of advanced aeronautic displays. NASA and UCSD propose to
+                gather research data in NASA ARC’s Advanced Controls and Displays (ACD) laboratory utilizing Calit2’s
+                Sound Bender system prototype, along with NASA’s Auditory Alert System.
+              </div>
+            </div>
+            <!-- /.row-questionnare-txt -->
+            <div class="row-questionnare">
+              <h5 class="to-review">1. Were the majority of the stated goals and objectives in the agreement accomplished?</h5>
+              <div class="radio-group" data-is-enabled="isEnabledPS">
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="statedGoals" data-is-checked="isParallel" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">Yes</span>
+                </label>
+              </div>
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="statedGoals" data-is-checked="isSerial" class="chkctrl" /><i class="icon"></i><span class="tx">No</span>
+                </label>
+              </div>
+              </div>
+            </div>
+            <!-- /.row-questionnare -->
+            <div class="row-questionnare">
+              <h5 class="to-review">2. What were the specific benefits from this collaboration? Select all that apply </h5>
+              <div class="checkbox-group">
+                <label class="chk chk-lg">
+                  <input type="checkbox"  class="chkctrl" checked />
+                  <i class="icon"></i>
+                  <span class="tx"> Programmatic (relates to one or more NASA program(s); please identify the specific program(s))</span>
+                </label>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="programmatic-textarea">Please explain the specific the Programmatic benefits from this collaboration.</label></h5>
+                <div class="val">
+                  <textarea id="programmatic-textarea" class="ta-comment" title="Please explain the specific the Programmatic benefits from this collaboration."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+              <div class="checkbox-group">
+                <label class="chk chk-lg">
+                  <input type="checkbox"  class="chkctrl" checked />
+                  <i class="icon"></i>
+                  <span class="tx"> General Technical (technical benefits not directly related to a specific NASA program)</span>
+                </label>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="general-technical-textarea">Please explain the specific the General Technical benefits from this collaboration.</label></h5>
+                <div class="val">
+                  <textarea id="general-technical-textarea" class="ta-comment" title="Please explain the specific the General Technical benefits from this collaboration."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+              <div class="checkbox-group">
+                <label class="chk chk-lg">
+                  <input type="checkbox"  class="chkctrl" checked />
+                  <i class="icon"></i>
+                  <span class="tx">Institutional (e.g., offset underutilized operations & maintenance costs for underutilized facilities/other assets, retain/enhance critical skills)</span>
+                </label>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="institutional-textarea">Please explain the specific the Institutional benefits from this collaboration.</label></h5>
+                <div class="val">
+                  <textarea id="institutional-textarea" class="ta-comment" title="Please explain the specific the Institutional benefits from this collaboration."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+              <div class="checkbox-group">
+                <label class="chk chk-lg">
+                  <input type="checkbox"  class="chkctrl" checked />
+                  <i class="icon"></i>
+                  <span class="tx">Other (e.g., education/outreach, technology transfer, enhancing U.S. industrial base)</span>
+                </label>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="other-textarea">Please explain the specific the other benefits from this collaboration.</label></h5>
+                <div class="val">
+                  <textarea id="other-textarea" class="ta-comment" title="Please explain the specific the other benefits from this collaboration."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+              <div class="checkbox-group">
+                <label class="chk chk-lg">
+                  <input type="checkbox"  class="chkctrl" checked />
+                  <i class="icon"></i>
+                  <span class="tx">None</span>
+                </label>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="none-textarea">Please explain. Click outside the text box when done to display the submit button.</label></h5>
+                <div class="val">
+                  <textarea id="none-textarea" class="ta-comment" title="Please explain. Click outside the text box when done to display the submit button."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+            </div>
+            <!-- /.row-questionnare -->
+            <div class="row-questionnare">
+              <h5 class="to-review"><label for="benefits-associated-textarea">3. Were there benefits associated with the broader public, including the science, aeronautics, and space exploration communities? </label></h5>
+              <div class="comments-area">
+                <div class="val">
+                  <textarea id="benefits-associated-textarea" class="ta-comment" title="Were there benefits associated with the broader public, including the science, aeronautics, and space exploration communities? "></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+            </div>
+            <!-- /.row-questionnare -->
+            <div class="row-questionnare">
+              <h5 class="to-review">
+                4. Please select all the NASA Technology Areas (Roadmaps) listed below that this collaboration has helped advance.
+                Select “None” if nothing applies. Click the technology area to open its corresponding Roadmap.
+              </h5>
+              <div class="comments-area checkbox-group">
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/500393main_TA01-ID_rev6-NRC-wTASR.pdf" class="blue-link">
+                    TA01 Launch Propulsion Systems (LPSTA)
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501329main_TA02-ID_rev3-NRC-wTASR.pdf" class="blue-link">
+                    TA02 In-Space Propulsion Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501328main_TA03-ID_rev7_NRC_wTASR.pdf" class="blue-link">
+                    TA03 Space Power and Energy Storage
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501622main_TA04-ID_rev6b_NRC_wTASR.pdf" class="blue-link">
+                    TA04 Robotics, Tele-Robotics and Autonomous Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501623main_TA05-ID_rev6_NRC_wTASR.pdf" class="blue-link">
+                    TA05 Communications and Navigation Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/500436main_TA06-ID_rev6a_NRC_wTASR.pdf" class="blue-link">
+                    TA06 Human Health, Life Support and Habitation Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501327main_TA07-ID_rev7_NRC-wTASR.pdf" class="blue-link">
+                    TA07 Human Exploration Destination Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501624main_TA08-ID_rev5_NRC_wTASR.pdf" class="blue-link">
+                    TA08 Science Instruments, Observatories and Sensor Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501326main_TA09-ID_rev5_NRC_wTASR.pdf" class="blue-link">
+                    TA09 Entry, Descent and Landing
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501325main_TA10-ID_rev8_NRC-wTASR.pdf" class="blue-link">
+                    TA10 Nanotechnology
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501321main_TA11-ID_rev4_NRC-wTASR.pdf" class="blue-link">
+                    TA11 Modeling, Simulation, Information Technology and Processing
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501625main_TA12-ID_rev6_NRC-wTASR.pdf" class="blue-link">
+                    TA12 Materials, Structures, Mechanical Systems and Manufacturing
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501625main_TA12-ID_rev6_NRC-wTASR.pdf" class="blue-link">
+                    TA13 Ground and Launch Systems Processing
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                  </label>
+                  <a href="http://www.nasa.gov/sites/default/files/501626main_TA13-ID_rev4_NRC-wTASR.pdf" class="blue-link">
+                    TA14 Thermal Management Systems
+                  </a>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                    <span class="tx">TA15 Aeronautics</span>
+                  </label>
+                </div>
+                <!-- /.link-val -->
+                <div class="val link-val">
+                  <label class="chk chk-lg">
+                    <input type="checkbox"  class="chkctrl" />
+                    <i class="icon"></i>
+                    <span class="tx">None</span>
+                  </label>
+                </div>
+                <!-- /.link-val -->
+              </div>
+              <!-- /.comments-area -->
+            </div>
+            <!-- /.row-questionnare -->
+            <div class="row-questionnare">
+              <h5 class="to-review">
+                5. Did this collaboration result in any new or pending intellectual property (inventions or data)
+                for NASA or the partner (e.g., patents, trademarks, copyrights, software, or licenses)?
+              </h5>
+              <div class="radio-group">
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="collaboration-result-first" data-is-checked="isYes" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">Yes</span>
+                </label>
+              </div>
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="collaboration-result-first" data-is-checked="isNo" class="chkctrl" /><i class="icon"></i><span class="tx">No</span>
+                </label>
+              </div>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="specific-IP-textarea">Please explain and identify the specific IP that has been granted or is pending. </label></h5>
+                <div class="val">
+                  <textarea id="specific-IP-textarea" class="ta-comment" title="Please explain and identify the specific IP that has been granted or is pending."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+            </div>
+            <!-- /.row-questionnare -->
+            <div class="row-questionnare">
+              <h5 class="to-review">
+                6. Did this collaboration result in any new or pending publications for NASA or the partner
+                (e.g., Tech Briefs, NASA Spin-Offs, New Technology Reports, technical journals, other publications/presentations)?
+              </h5>
+              <div class="radio-group">
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="collaboration-result-second" data-is-checked="isYes" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">Yes</span>
+                </label>
+              </div>
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="collaboration-result-second" data-is-checked="isNo" class="chkctrl" /><i class="icon"></i><span class="tx">No</span>
+                </label>
+              </div>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="specific-reports-textarea">Please explain and identify the specific reports/publications/presentations.</label></h5>
+                <div class="val">
+                  <textarea id="specific-reports-textarea" class="ta-comment" title="Please explain and identify the specific reports/publications/presentations."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+            </div>
+            <!-- /.row-questionnare -->
+            <div class="row-questionnare">
+              <h5 class="to-review">
+                7. Did this collaboration result in any new or pending awards or recognitions for NASA or the partner
+                (e.g., NASA software of the Year, NASA Invention of the Year, Spin-Off Awards, Space Technology Hall of Fame)?
+              </h5>
+              <div class="radio-group">
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="collaboration-result-third" data-is-checked="isYes" checked="checked" class="chkctrl" /><i class="icon"></i><span class="tx">Yes</span>
+                </label>
+              </div>
+              <div class="row-bar">
+                <label class="chk chk-lg rev">
+                  <input type="radio" name="collaboration-result-third" data-is-checked="isNo" class="chkctrl" /><i class="icon"></i><span class="tx">No</span>
+                </label>
+              </div>
+              </div>
+              <div class="comments-area">
+                <h5 class="to-review"><label for="specific-award-textarea">Please explain and identify the specific award/recognition(s). Click outside the text box when done to display the submit button.</label></h5>
+                <div class="val">
+                  <textarea id="specific-award-textarea" class="ta-comment" title="Please explain and identify the specific award/recognition(s). Click outside the text box when done to display the submit button."></textarea>
+                </div>
+              </div>
+              <!-- /.comments-area -->
+              <a href="https://pam.nasa.gov/ldap_web/attach_routing_file.aspx?pgv=BB0BAFC4EFBBD70E7FE7129422FACA3BC99C7C5AB6F5B319E00AA376A1C5CCEC85787B3B52BB830C049B064ECB374E9441041C18A724E2229416C25278ACA7A936C10D18BE715E897690F49B222D3164FE6703C5C14D4BAB8E3A67E24834BB5D" class="blue-link down-link">
+                Upload any additional files supporting responses to this questionnaire.
+              </a>
+            </div>
+            <!-- /.row-questionnare -->
           </section>
           <!-- /.table-section -->
+          <footer class="bar-btn spacing-md">
+            <div class="lt"></div>
+            <div class="rt">
+              <a href="my-reviews.html" class="btn btn-secondary">Cancel</a>
+              <a href="my-reviews.html" class="btn modal-submit">Save</a>
+              <a href="my-reviews-completed.html" class="btn modal-submit">Submit</a>
+            </div>
+          </footer>
         </div>
         <!-- /.table-container -->
-
       </div>
       <!-- /.viewport -->
     </main>
   </div>
+  <!-- /.wrapper -->
 
-  <!--modal -->
+  <!-- modal -->
+  
+
+  <div id="approve-agreement-confirm-modal" class="modal confirm-modal">
+    <a class="icon-close close-modal"></a>
+    <div class="modal-header">
+      <h2>Message</h2>
+    </div>
+    <div class="modal-body">
+      <div class="message">Are you sure you concur/approve with this agreement ?</div>
+    </div>
+    <div class="modal-footer">
+      <a class="button close-modal">No</a>
+      <a class="button primary" onclick="enableSubmit()">Yes</a>
+    </div>
+  </div>
+  <!-- /#approve-agreement-confirm-modal.modal -->
+
   <div id="add-file-revision-modal" class="modal add-file-revision">
     <a class="icon-close close-modal"></a>
     <div class="modal-header">
@@ -464,8 +711,8 @@
         </div>
       </div>
       <div class="description-section clearfix">
-        <h4><label for="description">Description</label></h4>
-        <textarea id="description" title="Description"></textarea>
+        <h4><label data-add-index="for" for="description">Description</label></h4>
+        <textarea data-add-index="id" id="description" title="Description"></textarea>
       </div>
     </div>
     <div class="modal-footer">
@@ -524,28 +771,28 @@
         <div class="inputs">
           <div class="rw">
             <div class="input-group">
-              <label for="firstName-ma-rev">First Name</label>
-              <input type="text" id="firstName-ma-rev">
+              <label for="firstName-mar">First Name</label>
+              <input type="text" id="firstName-mar">
             </div>
             <div class="input-group">
-              <label for="lastName-ma-rev">Last Name</label>
-              <input type="text" id="lastName-ma-rev">
-            </div>
-          </div>
-          <div class="rw">
-            <div class="input-group">
-              <label for="title">Title</label>
-              <input type="text" id="title">
-            </div>
-            <div class="input-group">
-              <label for="email-ma-rev">Email</label>
-              <input type="text" id="email-ma-rev">
+              <label for="lastName-mar">Last Name</label>
+              <input type="text" id="lastName-mar">
             </div>
           </div>
           <div class="rw">
             <div class="input-group">
-              <label for="phoneNumber-ma-rev">Phone Number</label>
-              <input type="text" id="phoneNumber-ma-rev">
+              <label for="title-mar">Title</label>
+              <input type="text" id="title-mar">
+            </div>
+            <div class="input-group">
+              <label for="email-mar">Email</label>
+              <input type="text" id="email-mar">
+            </div>
+          </div>
+          <div class="rw">
+            <div class="input-group">
+              <label for="phoneNumber-mar">Phone Number</label>
+              <input type="text" id="phoneNumber-mar">
             </div>
           </div>
         </div>
@@ -566,8 +813,8 @@
               </label>
             </li>
             <li class="clearfix">
-              <label class="chk  chk-lg">
-                <input type="checkbox" class="chkctrl" />
+              <label class="chk  chk-lg" for="uploadAccess">
+                <input type="checkbox" id="uploadAccess" title="Upload Access" class="chkctrl" />
                 <i class="icon"></i>
                 <span class="text">Reviewer File Upload Access<a class="icon-help"></a></span>
               </label>
@@ -596,20 +843,20 @@
       <div class="search-reviewer clearfix">
         <div class="inputs">
           <div class="input-group">
-            <label for="firstName-add-alt">First Name</label>
-            <input type="text" id="firstName-add-alt">
+            <label for="firstName-alt-add">First Name</label>
+            <input type="text" id="firstName-alt-add">
           </div>
           <div class="input-group">
-            <label for="center-add-alt">Center</label>
-            <select class="stylize" id="center-add-alt">
+            <label for="center-alt-add">Center</label>
+            <select class="stylize" id="center-alt-add">
               <option value="GRC">GRC</option>
               <option value="Lorem">Lorem</option>
               <option value="Ipsum">Ipsum</option>
             </select>
           </div>
           <div class="input-group">
-            <label for="lastName-add-alt">Last Name</label>
-            <input type="text" id="lastName-add-alt">
+            <label for="lastName-alt-add">Last Name</label>
+            <input type="text" id="lastName-alt-add">
           </div>
         </div>
         <div class="buttons">
@@ -636,28 +883,28 @@
         <div class="inputs">
           <div class="rw">
             <div class="input-group">
-              <label for="firstName-man-add">First Name</label>
-              <input type="text" id="firstName-man-add">
+              <label for="firstName-m-add">First Name</label>
+              <input type="text" id="firstName-m-add">
             </div>
             <div class="input-group">
-              <label for="lastName-man-add">Last Name</label>
-              <input type="text" id="lastName-man-add">
-            </div>
-          </div>
-          <div class="rw">
-            <div class="input-group">
-              <label for="title-man-add">Title</label>
-              <input type="text" id="title-man-add">
-            </div>
-            <div class="input-group">
-              <label for="email-man-add">Email</label>
-              <input type="text" id="email-man-add">
+              <label for="lastName-m-add">Last Name</label>
+              <input type="text" id="lastName-m-add">
             </div>
           </div>
           <div class="rw">
             <div class="input-group">
-              <label for="phoneNumber-man-add">Phone Number</label>
-              <input type="text" id="phoneNumber-man-add">
+              <label for="title-m-add">Title</label>
+              <input type="text" id="title-m-add">
+            </div>
+            <div class="input-group">
+              <label for="email-m-add">Email</label>
+              <input type="text" id="email-m-add">
+            </div>
+          </div>
+          <div class="rw">
+            <div class="input-group">
+              <label for="phoneNumber-m-add">Phone Number</label>
+              <input type="text" id="phoneNumber-m-add">
             </div>
           </div>
         </div>
@@ -716,20 +963,20 @@
       <div class="search-reviewer clearfix">
         <div class="inputs">
           <div class="input-group">
-            <label for="firstName-add-cour">First Name</label>
-            <input type="text" id="firstName-add-cour">
+            <label for="firstName-add-cour-copy">First Name</label>
+            <input type="text" id="firstName-add-cour-copy">
           </div>
           <div class="input-group">
-            <label for="center-add-cour">Center</label>
-            <select class="stylize" id="center-add-cour">
+            <label for="center-add-cour-copy">Center</label>
+            <select class="stylize" id="center-add-cour-copy">
               <option value="GRC">GRC</option>
               <option value="Lorem">Lorem</option>
               <option value="Ipsum">Ipsum</option>
             </select>
           </div>
           <div class="input-group">
-            <label for="lastName-add-cour">Last Name</label>
-            <input type="text" id="lastName-add-cour">
+            <label for="lastName-add-cour-copy">Last Name</label>
+            <input type="text" id="lastName-add-cour-copy">
           </div>
         </div>
         <div class="buttons">
@@ -756,28 +1003,28 @@
         <div class="inputs">
           <div class="rw">
             <div class="input-group">
-              <label for="firstName-manual">First Name</label>
-              <input type="text" id="firstName-manual">
+              <label for="firstName-ma-rev">First Name</label>
+              <input type="text" id="firstName-ma-rev">
             </div>
             <div class="input-group">
-              <label for="lastName-manual">Last Name</label>
-              <input type="text" id="lastName-manual">
-            </div>
-          </div>
-          <div class="rw">
-            <div class="input-group">
-              <label for="title-manual">Title</label>
-              <input type="text" id="title-manual">
-            </div>
-            <div class="input-group">
-              <label for="email-manual">Email</label>
-              <input type="text" id="email-manual">
+              <label for="lastName-ma-rev">Last Name</label>
+              <input type="text" id="lastName-ma-rev">
             </div>
           </div>
           <div class="rw">
             <div class="input-group">
-              <label for="phoneNumber-manual">Phone Number</label>
-              <input type="text" id="phoneNumber-manual">
+              <label for="title-ma-rev">Title</label>
+              <input type="text" id="title-ma-rev">
+            </div>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="text" id="email">
+            </div>
+          </div>
+          <div class="rw">
+            <div class="input-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="text" id="phoneNumber">
             </div>
           </div>
         </div>
@@ -954,10 +1201,8 @@
     </div>
   </div>
   <!-- /#add-routing-template-modal.modal -->
-
   <div class="modal-overlay"></div>
-  <!-- /.modal-overlay -->
-  <!--modal-end -->
+  <!-- modal-end -->
   <!-- JavaScript -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/dropkick/build/js/dropkick.min.js"></script>

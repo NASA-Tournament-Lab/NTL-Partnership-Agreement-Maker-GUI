@@ -3,6 +3,14 @@ var config = {
   isDisabledSaveAndSend: false
 }
 
+$.get('data/db-create-routings.json', function(data) {
+    if(data.isGFSCRouting){
+      config.isGFSCRouting = true;
+    }else{
+      config.isGFSCRouting = false;
+    }
+  });
+
 /**
  * create-new-routing-package-add-dist-options.html
  * 
