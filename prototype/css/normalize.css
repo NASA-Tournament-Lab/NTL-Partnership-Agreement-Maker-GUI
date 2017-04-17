@@ -115,14 +115,11 @@ body {
 }
 a,
 a:hover,
-a:active,
-a:focus {
+a:active {
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
-a:visited,
-a:focus {
+a:visited {
   outline: none;
 }
 a.lnk:hover {

@@ -16,9 +16,6 @@ strong{
   font-weight: 600;
 }
 
-input:focus,
-textarea:focus,
-button:focus,
 button:active {
   outline: 0;
 }
